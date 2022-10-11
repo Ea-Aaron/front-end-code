@@ -1,5 +1,0 @@
-username
-age
-sex
-banji
-school
