@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax 取消请求</title>
+</head>
+
+<body>
+    <button>发送请求</button>
+    <button>取消请求</button>
+
+    <script>
+        // 获取元素对象
+        const btn = document.querySelectorAll('button');
+        let xhr = null;
+
+        btn[0].onclick = function () {
+            xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://127.0.0.1:8000/deley');
+            xhr.send();
+        }
+
+        // 手动取消请求 abort()
+        btn[1].onclick = function () {
+            xhr.abort();
+        }
+    </script>
+</body>
+
+</html>

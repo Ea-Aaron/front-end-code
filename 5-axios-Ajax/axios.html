@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios发送AJAX请求</title>
+    <link crossorigin="anonymous" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet">
+    <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">axios发送AJAX请求 </h2>
+        <button class="btn btn-primary">GET</button>
+        <button class="btn btn-danger">POST</button>
+        <button class="btn btn-info">通用型方法ajax</button>
+    </div>
+
+    <script>
+        const button = document.querySelectorAll('button');
+
+        // 配置 baseurl
+        axios.defaults.baseURL = 'http://127.0.0.1:8000';
+
+        button[0].onclick = function () {
+            // GET  请求
+            axios.get('/axios-server', {
+                // url 参数
+                params: {
+                    id: 12,
+                    vip: 7
+                },
+                // 请求头信息
+                headers: {
+                    a: 100,
+                    b: 200
+                }
+            }).then((value) => {
+                console.log(value);
+            })
+        }
+
+        button[1].onclick = function () {
+            // post 请求
+            // 第二个参数是请求体
+            // 第三个参数是其他设置
+            axios.post('/axios-server', {
+                username: "admin",
+                password: "admin"
+            }, {
+                params: {
+                    id: 200,
+                    vip: 10
+                },
+                headers: {
+                    c: 300,
+                    d: 400
+                }
+            })
+        }
+
+        button[2].onclick = function () {
+            axios({
+                // 请求类型
+                method: 'POST',
+                // url
+                url: '/axios-server',
+                // url参数
+                params: {
+                    id: 300,
+                    vip: 50
+                },
+                // 请求头信息
+                headers: {
+                    a: 600,
+                    d: 800
+                },
+                // 请求体参数
+                data: {
+                    username: "admin",
+                    password: "admin"
+                }
+            }).then(response => {
+                // 响应状态码
+                console.log(response.status);
+                // 响应状态字符串
+                console.log(response.statusText);
+                // 响应头信息
+                console.log(response.headers);
+                // 响应体信息
+                console.log(response.data);
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE缓存问题</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #90b;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击发送请求</button>
+    <div id="result"></div>
+
+    <script>
+        // 获取元素对象
+        const btn = document.getElementsByTagName('button')[0];
+        const div = document.querySelector('#result');
+        // 绑定事件
+        btn.addEventListener('click', function () {
+            // console.log(11);
+            const xhr = new XMLHttpRequest();
+            /* 
+                这样 xhr.open('GET', 'http://127.0.0.1:8000/ie'); 设置,IE浏览器有时会读取本地缓存,而不是从服务器重新读取,就会获取以前的数据
+                修改方法: 在URL后面加一个时间戳,告诉浏览器,这两次请求不是同一个请求,就会重新向服务器端发起请求
+            */
+            xhr.open('GET', 'http://127.0.0.1:8000/ie?t=' + Date.now());
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                div.innerHTML = xhr.response;
+            }
+        })
+    </script>
+</body>
+
+</html>

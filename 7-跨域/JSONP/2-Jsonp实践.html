@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsonp实践</title>
+</head>
+
+<body>
+    <input type="text">
+    <p></p>
+
+    <script>
+        // 获取元素
+        const input = document.querySelector('input');
+        const p = document.querySelector('p');
+
+        // 声明handle函数
+        function handle(data) {
+            input.style.border = '1xp solid #f00';
+            p.innerHTML = data.msg;
+        }
+
+        // 绑定事件
+        input.onblur = function () {
+            // 获取用户输入的值
+            const username = this.value;
+            // 失去焦点之后,向服务器端发送请求
+            // 创建script标签
+            const script = document.createElement('script');
+            // 设置标签属性
+            script.src = 'http://127.0.0.1:8000/checkbox-server';
+            // 添加标签
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+
+</html>

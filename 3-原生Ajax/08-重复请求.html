@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax 重复请求</title>
+</head>
+
+<body>
+    <button>发送请求</button>
+
+    <!-- 
+        因为用户反点击一次发送请求,浏览器就会请求一次服务器,在上一次请求结束之前,用户再次点击,就会在请求一次,多次点击,就会向服务器发送多条请求,造成服务器拥堵
+        解决方法:对于相同的请求,多次点击,取消上一次还没有完成的请求,不论你点多少次,浏览器都只会向服务器发送一次请求
+     -->
+    <script>
+        // 获取元素对象
+        const btn = document.querySelectorAll('button');
+        let xhr = null;
+        // 创建一个全局变量 控制是否正在发送请求
+        let flag = false;
+
+        btn[0].onclick = function () {
+            if (flag) xhr.abort();  //如果上一个请求还没有结束,再次点击,取消上次请求
+            xhr = new XMLHttpRequest();
+            // 点击发送,全局请求变成true,正在发送
+            flag = true;
+            xhr.open('GET', 'http://127.0.0.1:8000/deley');
+            xhr.send();
+
+            // 当请求发送完成,修改全局请求为false,请求结束
+            xhr.readyStatechange = function () {
+                if (xhr.readyState === 4) {
+                    flag = false;
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
