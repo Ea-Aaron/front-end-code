@@ -1,0 +1,79 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": { // uni-ui 规则如下配置
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationStyle": "custom" // 不显示顶部导航栏
+			}
+		},
+		{
+			"path": "pages/classify/index",
+			"style": {
+				"navigationBarTitleText": "分类",
+				"navigationBarBackgroundColor": "#00b783",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/study/index",
+			"style": {
+				"navigationBarTitleText": "学习中心",
+				"navigationBarBackgroundColor": "#00b783",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"navigationBarBackgroundColor": "#00b783",
+				"navigationBarTextStyle": "white"
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#999",
+		"selectedColor": "#00b783",
+		"borderStyle": "white",
+		"backgroundColor": "white",
+		"list": [
+			{
+				"pagePath": "pages/home/index",
+				"text": "首页",
+				"iconPath": "static/image/image/tabbar1.png",
+				"selectedIconPath": "static/image/tabbar2.png"
+			},
+			{
+				"pagePath": "pages/classify/index",
+				"text": "分类",
+				"iconPath": "static/image/tabbar3.png",
+				"selectedIconPath": "static/image/tabbar4.png"
+			},
+			{
+				"pagePath": "pages/study/index",
+				"text": "学习",
+				"iconPath": "static/image/tabbar6.png",
+				"selectedIconPath": "static/image/tabbar5.png"
+			},
+			{
+				"pagePath": "pages/mine/index",
+				"text": "我的",
+				"iconPath": "static/image/tabbar7.png",
+				"selectedIconPath": "static/image/tabbar8.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
