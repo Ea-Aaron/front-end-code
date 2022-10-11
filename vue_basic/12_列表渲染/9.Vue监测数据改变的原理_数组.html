@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../JS/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1>学校信息</h1>
+        <h2>名称:{{school.name}}</h2>
+        <h2>地址:{{school.address}}</h2>
+        <h2>校长:{{school.leader}}</h2>
+
+        <h1>学生信息</h1>
+        <button @click="addSex">添加性别属性</button>
+        <h2>姓名:{{studen.name}}</h2>
+        <h2>年龄:{{studen.age}}</h2>
+        <h2>性别:</h2>
+    </div>
+</body>
+
+<script>
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            school: {
+                name: '武大',
+                address: "珞喻路",
+            },
+            studen: {
+                name: '王五',
+                age: 18,
+                hobby: ['抽烟', '喝酒', '烫头'], // 使用能够改变原数组的数组方式时，Vue才能监测到
+                friends: [
+                    { name: '李四', age: 20 },
+                    { name: '王五', age: 25 }
+                ]
+            }
+        }
+    })
+</script>
+
+</html>

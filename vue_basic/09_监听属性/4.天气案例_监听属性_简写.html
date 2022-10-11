@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../JS/vue.js"></script>
+</head>
+
+<!-- 
+    深度监视：
+        （1）.Vue中的watch默认不监视对象内部信息的改变（一层）
+        （2）.配置deep:true可以监测对象内部值的改变（多层）
+    备注：
+        （1）.Vue自身可以检测对象内部值的改变，但是Vue提供的watch默认不可以
+        （2）.使用watch时根据数据的具体结构，决定是否采用深度监视
+ -->
+
+<body>
+    <div id="root">
+        <h1>今天天气很{{info}}</h1>
+        <button @click='changeWther'>切换天气</button>
+    </div>
+</body>
+
+<script>
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            isHot: true,
+        },
+        methods: {
+            changeWther() {
+                this.isHot = !this.isHot
+            }
+        },
+        computed: {
+            info() {
+                return this.isHot ? '炎热' : '凉爽'
+            }
+        },
+        watch: {
+            // 正常写法
+            /* isHot: {
+                // immediate: true, // 初始化时让handler调用一次
+                // deep:true, // 深度监视
+                handler(newValue, oldValue) {
+                    console.log('isHot被修改了', newValue, oldValue);
+                }
+            } */
+
+            // 简写
+            /* isHot(newValue, oldValue) {
+                console.log('isHot被修改了', newValue, oldValue);
+            } */
+        }
+    })
+
+    // 完整写法
+    // Vue中函数不要使用箭头函数，箭头函数this指向window
+    /* vm.$watch('isHot', {
+        immediate: true,
+        deep: true,
+        handler(newValue, oldValue) {
+            console.log('isHot被修改了', newValue, oldValue, this);
+        }
+    }) */
+
+    // 简写
+    vm.$watch('isHot', (newValue, oldValue) => {
+        console.log('isHot被修改了', newValue, oldValue, this);
+    })
+</script>
+
+</html>

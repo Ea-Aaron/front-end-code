@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../JS/vue2.js"></script>
+</head>
+
+<body>
+    <div>
+        <div id="root" :x="n">
+            <h2>现在n的值:{{n}}</h2>
+            <button @click="add">点我n+1</button>
+            <button @click="bye">点我销毁vm</button>
+        </div>
+
+        <div>
+            <img src="../Img/生命周期.png" alt="">
+        </div>
+    </div>
+</body>
+
+<script>
+    new Vue({
+        el: '#root',
+        /* template: `
+        <div>
+            <h2>现在n的值:{{n}}</h2>
+            <button @click="add">点我n+1</button>
+        </div>`, */
+        data: {
+            n: 1
+        },
+        methods: {
+            add() {
+                this.n++
+                console.log('add');
+            },
+            bye() {
+                console.log('bye');
+                this.$destroy();
+            }
+        },
+        // 初始化：生命周期、时间；但是数据代理还未开始。
+        // 此时无法访问data中数据、methods中的方法
+        beforeCreate() {
+            console.log('beforeCreate');
+            // console.log(this);
+            // debugger;
+        },
+        // 初始化：数据监测、数据代理。
+        // 此时可以访问data中的数据、methods中的方法
+        created() {
+            console.log('created');
+            // console.log(this);
+            // debugger
+        },
+        // Vue开始解析模板，生成虚拟DOM（内存中），页面还不能显示解析好的内容。
+        // 页面呈现的时未经Vue编辑的DOM结构;所有对DOM的操作,最终都不生效
+        beforeMount() {
+            console.log('brforeMount');
+            // console.log(this);
+            // debugger;
+        },
+        mounted() {
+            console.log('mounted');
+            // console.log(this);
+            // document.getElementById('root').style.backgroundColor = "orange"
+        },
+        beforeUpdate() {
+            console.log('beforeupdate');
+            // console.log(this.n);
+            // debugger
+        },
+        updated() {
+            console.log('updated')
+            // console.log(this.n);
+            // debugger
+        },
+        beforeDestroy() {
+            console.log('beforeDestroy');
+            this.n = 99
+            console.log(this.add);
+        },
+        destroyed() {
+            console.log('destroyed');
+        },
+    })
+</script>
+
+</html>
