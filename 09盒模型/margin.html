@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        想让快元素在页面，水平居中，须满足以下条件：
+            1.父级元素必须要有宽度
+            2.让左右外边距相等，margin：0 auto
+
+        以上方法只适用于块元素，对于行内元素和行内块元素，只需要设置text-align：center即可
+     -->
+
+    <style>
+        div {
+            width: 500px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: red;
+            text-align: center;
+        }
+
+        /* .one {
+            margin: 5px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="one">1</div>
+    <div class="two">2</div>
+</body>
+
+</html>

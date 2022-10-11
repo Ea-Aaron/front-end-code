@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0%;
+        }
+        #hander {
+            height: 50px;
+            background-color: #E83828;
+        }
+        #hander .hande {
+            height: 50px;
+            width: 60%;
+            background-color: #D1D3D6;
+            margin: auto;
+        }
+
+        #banner {
+            height: 500px;
+            background-color: #6A5ACD;
+        }
+        #category {
+            width: 1020px;
+            height: 200px;
+            background-color: #FF359A;
+            margin: auto;
+        }
+        #category .item {
+            width: 125px;
+            height: 165px;
+            padding: 10px 25px 25px 25px;
+            border-right: 1px dashed black;
+            float: left;
+        }
+        #category .item.first {
+            padding-left: 0%;
+        }
+        #category .item.one {
+            padding-right: 0%;
+            border: 0px;
+        }
+        #case {
+            background-color: #EEEEEE;
+            overflow: auto;
+        }
+        #case .text {
+            font-size: 60px;
+            padding-left: 30px;
+            padding-top: 30px;
+        }
+        #case .item {
+            width: 1000px;
+            height: 300px;
+            margin: auto;
+        }
+        #case .item .wapper {
+            width: 320px;
+            height: 300px;
+            background-color: #9ACD32;
+            float: left;
+            margin-right: 10px;
+        }
+        #case .item .wapper.list {
+            margin-right: 0px;
+        }
+        #case .button {
+            padding: 20px;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="hander">
+        <div class="hande"></div>
+    </div>
+
+    <div id="banner"></div>
+
+    <div id="category">
+        <div class="item first"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item one"></div>
+    </div>
+
+    <div id="case">
+        <div class="text">
+            case
+        </div>
+        <div class="item">
+            <div class="wapper"></div>
+            <div class="wapper"></div>
+            <div class="wapper list"></div>
+        </div>
+        <div class="button">
+            +更多信息
+        </div>
+    </div>
+</body>
+</html>

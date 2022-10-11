@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        transform:rotateX(45deg):沿着x轴正方向旋转45度
+        transform:rotateY(45deg):沿着y轴正方向旋转45度
+        transform:rotateZ(45deg):沿着z轴正方向旋转45度
+        transform:rotate3d(x, y, z, deg):沿着自定义轴旋转deg度
+
+        rotateX左手准则：
+            左手的手指拇指向左指向x轴正方向
+            其余手指的弯曲方向就是该元素沿着x轴旋转的方向
+        rotateY左手准则：
+            左手的手指拇指向下指向y轴正方向
+            其余手指的弯曲方向就是该元素沿着y轴旋转的方向
+     -->
+    <style>
+        div {
+            width: 448px;
+            height: 252px;
+            margin: 100px auto;
+            perspective: 200px;
+        }
+
+        div img {
+            transition: all 1s;
+
+        }
+
+        img:hover {
+            /* transform: rotateX(180deg); */
+            /* 沿着x轴运动 其他同理 */
+            transform: rotate3d(1, 0, 0, 180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="img/054101015F50502104CD84A88B6B7594.jpg" alt="">
+    </div>
+</body>
+
+</html>

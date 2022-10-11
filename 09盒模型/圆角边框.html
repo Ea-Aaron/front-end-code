@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        通过border-radius来设置圆角的程度
+     -->
+    <style>
+        .one1 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* border-radius: 10px; */
+            /* 如果想要一个圆 */
+            border-radius: 50%
+        }
+
+        .one2 {
+            width: 500px;
+            height: 100px;
+            background-color: pink;
+            border-radius: 50px;
+            /* border-radius: 50%; */
+        }
+
+        .one3 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border-radius: 10px 20px 30px 40px;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+
+        p {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    正方形圆角边框：
+    <div class="one1"></div>
+    矩形圆角边框
+    <div class="one2"></div>
+    其他
+    <div class="one3">
+        <p class="one4"></p>
+    </div>
+</body>
+
+</html>

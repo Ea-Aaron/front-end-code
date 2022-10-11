@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        在以往给盒子添加padding和border值的时候，会撑大盒子,以往会width-padding-border
+        CSS3中可以通过box-sizing来指定盒子模型，有两个值
+        1.box-sizing:content-box 盒子大小为width+padding+border（默认的）
+        2.box-sizing:border-box 盒子大小为width
+     -->
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 20px solid red;
+            padding: 15px;
+        }
+
+        p {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 20px solid red;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div>11111</div>
+    <p>2222</p>
+</body>
+
+</html>

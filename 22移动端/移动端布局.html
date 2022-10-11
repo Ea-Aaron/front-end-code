@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 
+        移动端布局必须在前面写上这句话
+        <meta name="viewport" content="width=device-width, user-scale=no, initial-scale=1.0, maximum-sacle=1.0, minimum-scale=1.0">
+        
+        移动端开发现在又两种方式
+            单独制作移动端页面
+                通常在移动端的网页前都会加上m（mobile）。通过判断设备，如果是移动端设备，就跳转到移动端页面
+                例如：m.jd.com  m.taobao.com
+            响应式兼容pc移动端
+                通过屏幕宽度来改变样式，以适应不同终端
+                【缺点】制作麻烦，需要花费很大精力去调兼容性问题
+                
+        移动端技术解决方案
+            1.CSS初始化 normalize.css
+             移动端CSS初始化推荐使用
+            【注】
+                保护了有价值的默认值
+                修复了浏览器的bug
+                是模块化的
+                拥有详细的文档
+            网址：https://necolas.github.io/normalize.css/
+
+            2.CSS3盒子模型 box-sizing
+                传统盒子宽度计算：盒子的宽度= CSS中设置的width + border + padding
+                    box-sizing:content-box
+                CSS3盒子宽度计算：盒子的宽度= CSS中设置的width里面包含了border和padding，也就是说，在CSS3中，padding和border不会撑大盒子
+                    box-sizing:border-box
+
+            3.点击高点我们需要清除
+                -webkit-tap-highlight-color: transparent;
+
+            4.在移动端浏览器默认的外观沙漠化加上这个属性，给按钮和输入框自定义样式
+                -webkit-appearance: none;
+
+            5.禁用长按页面时弹出菜单
+                -webkit-touch-callout: none;
+
+            
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div a {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+        }
+
+        input {
+            -webkit-appearance: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div><a href="#">aaron</a></div>
+    <input type="button" value="按钮">
+</body>
+
+</html>
