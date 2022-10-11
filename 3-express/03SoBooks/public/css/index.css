@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* 为元素设定的宽度和高度决定了元素的边框盒。就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。通过从已设定的宽度和高度分别减去边框和内边距才 */
+    box-sizing: border-box;
+}
+body {
+    background-color: #efefef;
+}
+
+/* 头部样式 */
+.header {
+    width: 100%;
+    height: 170px;
+    min-width: 1200px;
+    background: url(../img/logoko.png) no-repeat top center;
+}
+
+.navheader {
+    height: 170px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.nav {
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, .8);
+}
+
+.navlist {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    /* 两端对齐，项目之间的间隔都相等。 */
+    justify-content: space-between;
+}
+
+.link {
+    width: 100px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+}
+
+.search {
+    width: 300px;
+    height: 60px;
+    display: flex;
+}
+
+.search input {
+    border: none;
+    /* 取消文本框的边框 */
+    outline: none;
+    width: 200px;
+    height: 40px;
+    /* line-height: 30px; */
+    margin-top: 10px;
+    padding: 0 20px;
+    background: rgba(255, 255, 255, .3);
+    color: #fff;
+}
+
+.search button {
+    width: 100px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    /* 元素在侧轴居中。如果元素在侧轴上的高度高于其容器，那么在两个方向上溢出距离相同。 */
+    align-items: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .3);
+    border: none;
+    outline: none;
+}
+
+.search button .icon {
+    background-image: url(../img/search.png);
+    width: 30px;
+    height: 30px;
+    /* 规定背景图像的尺寸 */
+    background-size: 30px, 30px;
+    /* 设置是否及如何重复背景图像 */
+    background-repeat: no-repeat;
+    /* 设置背景图像的起始位置 */
+    background-position: center;
+}
+
+/* 内容样式 */
+.content {
+    width: 1200px;
+    display: flex;
+    margin: 100px auto 0 !important;
+}
+
+.booklist {
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.bookitem {
+    position: relative;
+    width: 240px;
+    margin: 10px 5px 0;
+    height: 320px;
+    text-align: center;
+    box-shadow: 0 1px 2px #efefef;
+    background-color: #fff;
+}
+.bookitem img {
+    margin: 10px auto 0;
+    width: 70%;
+    height: 230px;
+}
+.bookitem h3 {
+    width: 70%;
+    font-size: 18px;
+    font-family: '微软雅黑';
+    border-bottom: 1px dashed #ccc;
+    margin: 10px auto;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.bookitem p {
+    font-size: 16px;
+}
+.bookitem .cataory {
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    left: 10px;
+    top: 10px;
+    text-align: center;
+    line-height: 30px;
+    background-color: rgba(0, 0, 0, .7);
+    color: #fff;
+}
+
+.content .erweima {
+    flex: 1;
+}
+.content .erweima img {
+    width: 100%;
+}
+.booklist a {
+    text-decoration: none;
+    color: #333;
+}

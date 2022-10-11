@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>判断信息是男是女,如果是男就显示编程相关内容,为女则显示追星的相关内容</h1>
+
+    <% if(gender=='男' ) { %>
+        <h2>
+            <%- gender %>
+        </h2>
+        <h2>编程相关内容</h2>
+        <% } else { %>
+            <h2>追星相关内容</h2>
+            <% } %>
+</body>
+
+</html>

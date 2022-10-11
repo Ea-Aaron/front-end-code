@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%- book.bookname%>>
+    </title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/share.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="navheader"></div>
+        <div class="nav">
+            <div class="navlist">
+                <div class="link">小说文学</div>
+                <div class="link">历史文学</div>
+                <div class="link">小说文学</div>
+                <div class="link">历史文学</div>
+                <div class="link">小说文学</div>
+                <div class="link">历史文学</div>
+                <div class="link">小说文学</div>
+                <div class="link">历史文学</div>
+                <div class="search">
+                    <input type="text">
+                    <button>
+                        <span class="icon"></span>
+                        <span class="text">搜索</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 书记详情页 -->
+    <div class="content">
+        <div class="booklist">
+            <%- book.brief%>
+        </div>
+
+        <div class="erweima">
+            <img src="https://sobooks.cc/AD/330push.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

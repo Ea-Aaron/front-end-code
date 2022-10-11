@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ajax文件上传</h1>
+
+    <!-- 表单上传文件时,需要修改enctype属性为 multipart/form-data ,设置表单上传文件的类型 -->
+    <form action="/uploadajax" method="POST" enctype="multipart/form-data">
+        <!-- 如果不想使用默认得到文件上传的样式 -->
+        <label for="imgfile">文件上传</label>
+        <input hidden type="file" name="fileajax" id="imgfile">
+        <div class="btn">提交</div>
+    </form>
+
+    <div>
+        <h3>预览图片</h3>
+        <img src="" alt="" id="yulan">
+    </div>
+</body>
+
+<script src="/js/jquery-3.5.1.js"></script>
+<script>
+    // 创建formData对象
+    let formdata;
+    let file;
+    $('#imgfile').change(function () {
+        // console.log(this.files);  // 获取上传文件的信息
+        file = this.files[0];
+
+        // 预览图片
+        // 创建预览图片地址
+        let httpurl = window.webkitURL.createObjectURL(file);
+        $('#yulan').attr('src', httpurl);
+
+        // 每次上传都创建一个新的对象,防止一个对象里面有多张图片
+        formdata = new FormData()
+        // 将文件追加到formdata对象中
+        formdata.append('fileajax', file);
+    })
+
+    // 点击按钮,上传图片
+    $('.btn').click(function () {
+        $.ajax({
+            url: '/uploadajax',
+            method: 'post',
+            data: formdata, // 获取的对象信息在formdata中
+            processData: false, // 该数据不需要额外处理
+            contentType: false // 该文件类型不需要设置
+        }).then((res) => {
+            // 服务端返回的数据
+            // 返回的是字符串格式
+            console.log(res);
+            // 上传成功之后,将当前图片显示出来
+            $('body').append(`<h1>上传成功</h1><img src='${res.imgurl}'>`)
+        })
+    })
+</script>
+
+</html>

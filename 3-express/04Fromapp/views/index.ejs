@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索首页</title>
+</head>
+
+<body>
+  <!-- 
+    action: 提交至服务器的地址
+   -->
+
+  <!-- get 提交表单数据 -->
+  <!-- <form action="/ajax" , method="GET">
+    <input type="text" name="searchKey">
+    <input type="text" name="username">
+    <input type="submit" value="提交">
+  </form> -->
+
+  <!-- post提交表单数据 -->
+  <form action="/search" , method="POST">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit" value="提交">
+  </form>
+</body>
+
+</html>

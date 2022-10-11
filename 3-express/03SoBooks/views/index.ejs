@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to <%= title %>
+  </p>
+
+  <h1>- 会显示html内容 = 会将html标签转义之后在显示</h1>
+  <h1>- 的插入方式</h1>
+  <%- indextitle %>
+
+    <h1>= 的插入方式</h1>
+    <%= indextitle %>
+
+      <%# 注释标签,这里面的内容不会显示在页面上,也不会执行 %>
+</body>
+
+</html>
