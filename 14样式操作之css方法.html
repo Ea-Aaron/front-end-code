@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        // 操作样式之css方法
+        $(function () {
+            // 获取当前元素的宽度 结果带单位
+            // 属性名一定要加引号
+            console.log($('div').css('width'));
+            // 修改元素的css样式 可以省略单位
+            // $('div').css('width', '100px');
+            $('div').css('width', '100');
+
+            // 复合写法
+            $('div').css({
+                width: 400,
+                height: 400,
+                backgroundColor: 'red'
+                // 如果是复合属性则必须采取驼峰命名法，如果值不是数字，则需要加引号
+            })
+        })
+    </script>
+</body>
+
+</html>

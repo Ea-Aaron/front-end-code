@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+
+    <script>
+        $(document).on('click', function () {
+            console.log('我被点击了document');
+        })
+        $(function () {
+            $('div').on('click', function (event) {
+                // console.log(event);
+                console.log('我点击了div');
+                // 不想让他冒泡
+                event.stopPropagation();
+            })
+
+            // 阻止默认行为：event.preventDefault() 或者 return false
+            // 阻止冒泡：event.stopPropagation()
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

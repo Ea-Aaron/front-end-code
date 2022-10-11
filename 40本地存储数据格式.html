@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        var tudolist = [{
+            title: '我今天吃了两个馒头',
+            done: false
+        }, {
+            title: '今天学习jQuery',
+            done: false
+        }];
+
+        localStorage.setItem('tudo', JSON.stringify(tudolist));
+        // 【注】本地存储localStorage只能存储字符串格式的数据，因此需要把对象转换为字符串JSON.stringify(data)
+
+        // 获取本地存储的内容，需要把字符串格式的数据转换为对象格式 JSON.parse()
+        var data = localStorage.getItem('tudo');
+        // console.log(typeof data);
+        // console.log(data[0].title);
+
+        data = JSON.parse(data);
+        console.log(data);
+        console.log(data[0].title);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .tab {
+            width: 970px;
+            margin: 100px auto;
+        }
+
+        .tab_list {
+            height: 39px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab_list ul li {
+            float: left;
+            padding: 0 20px;
+            line-height: 39px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .tab_list .current {
+            background-color: #c81623;
+            color: #fff;
+        }
+
+        .item_info {
+            padding: 20px 0 0 20px;
+        }
+
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（5000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <ul>
+                <li class="item" style="display: block;">商品介绍模块</li>
+                <li class="item">规格与包装模块</li>
+                <li class="item">售后保障模块</li>
+                <li class="item">商品评价模块</li>
+                <li class="item">手机社区模块</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            // 1.获取li
+            $('.tab_list li').click(function () {
+                // 2.获取li的索引号
+                // console.log($(this).index());
+                var index = $(this).index();
+
+                // 3.修改当前li的样式
+                $(this).addClass('current').siblings().removeClass('current');
+
+                // 4.显示当前li的内容
+                $('.tab_con li').eq(index).show().siblings().hide();
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ul>
+    <ol>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+        <li>多个里面筛选几个</li>
+    </ol>
+
+    <script>
+        $(function () {
+            // 1.给第一个子元素 和 最后一个子元素 添加样式
+            $('ul li:first').css('color', 'red');
+            $('ul li:last').css('color', 'blue');
+
+            // 2.任意选择给第几个元素添加样式
+            $('ol li:eq(2)').css('color', 'green');
+
+            // 3.给偶数 或者 奇数元素添加样式
+            $('ol li:even').css('color', 'pink');
+            $('ol li:odd').css('color', 'skyblue');
+        })
+    </script>
+</body>
+
+</html>

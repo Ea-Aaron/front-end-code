@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        // jQuery 隐式迭代是对同一元素做相同操作。
+        // $('div').css('color', 'red');
+        // 如果想要对同一元素做不同操作，则需要遍历
+
+        // 1.each() 
+        // $('div').each(function(index, domEle) {})
+        // each() 方法遍历匹配的每一个元素。主要用DOM处理 ，each 每一个
+        // 里面的回调函数有两个参数：index 是每个元素索引号，domEle是每个DOM元素对象，不是jquery对象
+        // 所以想使用jQuery方法，需要给这个DOM元素转换为jQuery对象 $(domEle)
+        var arr = ['red', 'green', 'pink'];
+        var sum = 0;
+
+        $('div').each(function (i, domEle) {
+            // 可以自己指定索引号名称
+            console.log(i);
+            // domEle 是dom元素对象
+            console.log(domEle);
+            // domEle.css('color','blue');  //dom元素对象没有css方法
+            $(domEle).css('color', arr[i]);
+
+            // 让里面的元素相加得到结果
+            // $(domEle).text() 返回的是字符串
+            sum += parseInt($(domEle).text());
+            console.log(sum);
+        })
+
+        // 2.$.each() 遍历元素 主要用于遍历数据，处理数据
+        // $.each($('div'), function (i, ele) {
+        //     console.log(i);
+        //     console.log(ele);
+        // })
+
+        $.each(arr, function (i, ele) {
+            console.log(i);
+            console.log(ele);
+        })
+
+        $.each({ uname: "andy", age: 18 }, function (i, ele) {
+            console.log(i);
+            console.log(ele);
+        })
+    </script>
+</body>
+
+</html>

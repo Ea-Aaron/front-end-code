@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            // jQuery使用 $ 作为标识符 ，其他的js库也有可能会使用 $ 作为标识符，这样一起用就会引发冲突
+            function $(ele) {
+                return document.querySelector(ele);
+            }
+            // console.log($('div'));
+            // $('div').each();  // 我们定义的 $ 函数里面没有each方法
+            // 需要一个办法，解决这种冲突，让jQuery和其他的js 库共存 这就是多库共存
+
+            // 解决方法
+            // 1.使用 jQuery 代替 $
+            console.log(jQuery('div'));
+
+            // 2.让jQuery 释放对 $ 控制权，让用户自己决定
+            var aa = jQuery.noConflict();
+            console.log(aa('span'));
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <span></span>
+</body>
+
+</html>

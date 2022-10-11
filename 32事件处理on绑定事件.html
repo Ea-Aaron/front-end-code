@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .current {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+        <li>我们都是好孩子</li>
+    </ul>
+
+    <ol></ol>
+
+    <script>
+        $(function () {
+            // 单个事件注册
+            // 一次只能注册一个事件
+            // $('div').click(function () {
+            //     $(this).css('backgroundColor', 'pink');
+            // })
+            // $('div').mouseenter(function () {
+            //     $(this).css('backgroundColor', 'blue');
+            // })
+
+            // 1.多个事件注册
+            /* 
+                on()  方法在匹配元素上绑定一个或多个事件的事件处理函数
+                语法： element.on(events, [selector], fn) 
+                events：一个或者多个用空格分隔的事件类型，如："click" 或 "keydown"
+                selector：元素的子元素选择器
+            */
+            // $('div').on({
+            //     mouseenter: function () {
+            //         $(this).css('backgroundColor', 'blue');
+            //     },
+            //     click: function () {
+            //         $(this).css('backgroundColor', 'pink');
+            //     },
+            //     mouseleave: function () {
+            //         $(this).css('backgroundColor', 'skyblue');
+            //     }
+            // })
+
+            // 鼠标经过和离开都触发
+            $('div').on('mouseenter mouseleave', function () {
+                $(this).toggleClass('current');
+            })
+
+            // 2.on() 可以实现事件委托（事件委派）
+            // 事件委托：把原来加给子元素的事件绑定在父元素身上
+            $('ul').on('click', 'li', function () {
+                alert(11);
+            })
+            // click 是绑定在ul身上，但是 触发的对象是 ul 里面的 li
+
+            // 3.on() 动态创建元素
+            // 可以为未来创建的元素绑定事件
+            // $('ol li').click(function () {
+            //     alert(11);
+            // })
+            // 无法为后来创建的元素添加click事件
+
+            $('ol').on('click', 'li', function () {
+                alert(11);
+            })
+
+            $('ol').append('<li>我是后来创建的</li>');
+        })
+    </script>
+</body>
+
+</html>

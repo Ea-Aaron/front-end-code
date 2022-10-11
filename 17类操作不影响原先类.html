@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all .3s;
+        }
+
+        .two {
+            transform: rotate(720deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one"></div>
+
+    <script>
+        // 1.js方法  会覆盖掉原先类已有的类名
+        // var div = document.querySelector('div');
+        // div.className = 'two';
+
+        // 2.jquery  addClass 会在已有类名的后面添加类名
+        $('.one').addClass('two');
+        $('.one').removeClass('two');
+    </script>
+</body>
+
+</html>

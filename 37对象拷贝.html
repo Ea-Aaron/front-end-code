@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            /* 
+                想把某个对象拷贝（合并）给另外一个对象使用，此时可以使用$.extend() 方法
+                语法：
+                    $.extend([deep], target, object1, [objectN])
+                    deep：如果设为true为深拷贝，默认为false 浅拷贝
+                    target：要拷贝的目标对象
+                    object1：待拷贝到第一个对象的对象
+
+                浅拷贝是把被拷贝的对象 复杂数据类型中的地址 拷贝给目标对象，修改目标对象会影响被拷贝对象
+                深拷贝，前面加true，完全克隆（拷贝的对象，而不是地址），修改目标对象不会影响被拷贝对象
+            */
+            // var targetObj = {};
+            // var obj = {
+            //     id: 1,
+            //     name: "adny"
+            // };
+            // $.extend(targetObj, obj);
+            // console.log(targetObj);
+
+            // var targetObj = {
+            //     id: 0
+            // };
+            // var obj = {
+            //     id: 1,
+            //     name: "adny"
+            // };
+            // $.extend(targetObj, obj);
+            // console.log(targetObj);  // 会覆盖targetObj原来的值
+
+            // var targetObj = {
+            //     id: 0,
+            //     msg: {
+            //         sex: '男'
+            //     }
+            // };
+            // var obj = {
+            //     id: 1,
+            //     name: "adny",
+            //     msg: {
+            //         age: 18
+            //     }
+            // };
+            // $.extend(targetObj, obj);
+            // console.log(targetObj);
+            // targetObj.msg.age = 20;
+            // console.log(obj);
+
+            // 深拷贝 如果里面由不冲突的属性，会合并在一起
+            var targetObj = {
+                id: 0,
+                msg: {
+                    sex: '男'
+                }
+            };
+            var obj = {
+                id: 1,
+                name: "adny",
+                msg: {
+                    age: 18
+                }
+            };
+            $.extend(true, targetObj, obj)
+            targetObj.msg.age = 20;
+            console.log(targetObj);
+            console.log(obj);
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
