@@ -1,0 +1,37 @@
+{
+  "id": "3234591",
+  "name": "Vue_mall",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "14730",
+      "name": "选中",
+      "font_class": "xuanzhong",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "629357",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "11232093",
+      "name": "down",
+      "font_class": "down",
+      "unicode": "e7cd",
+      "unicode_decimal": 59341
+    },
+    {
+      "icon_id": "11232188",
+      "name": "up",
+      "font_class": "up",
+      "unicode": "e7e0",
+      "unicode_decimal": 59360
+    }
+  ]
+}
