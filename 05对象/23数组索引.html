@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // indexOf(数组元素,[起始的位置]) 作用就是返回该数组元素的索引号 从前面开始查找
+        // indexOf(数组元素,[起始的位置]) 可以指定从哪一个位置开始查找
+        // 只返回第一个满足条件的索引号
+        // 如果找不到这个元素，返回-1
+        var arr = [1, 2, 3, 2];
+        // console.log(arr.indexOf(2)); //1
+        console.log(arr.indexOf(2, 2)); //3
+        // console.log(arr.indexOf(4)); //-1
+
+        // lastIndexOf(数组元素) 作用就是返回该数组元素的索引号 从后面开始查找
+        // 只返回第一个满足条件的索引号
+        // 如果找不到这个元素，返回-1
+        console.log(arr.lastIndexOf(2)); //3
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

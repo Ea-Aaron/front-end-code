@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+
+    <script>
+        // fun.bind(thisArg, arg1, arg2, ...)
+        // bind 绑定 捆绑的意思
+        // thisArg：在fun函数运行时指定的this值
+        // arg1，arg2， ...:传递的参数
+        // 返回值由指定的this值和初始化参数改造的 原函数拷贝
+
+        var o = {
+            uname: 'aaron'
+        }
+        function fun(a, b) {
+            console.log(this);
+            console.log(a + b);
+        }
+        var f = fun.bind(o, 1, 2);
+        f();
+        // 1.不会调用原来的函数
+        // 2.返回的原函数改变this之后产生的新函数
+        // 3.如果有的函数不需要立即调用，但是又要改变这个函数内部this的指向，就可以用bind
+        // 4.点击按钮，禁用这个按钮，3秒之后恢复正常
+        // var btn = document.querySelector('button');
+        // btn.onclick = function () {
+        //     this.disabled = true;
+        //     setTimeout(function () {
+        //         // this.disabled = false; // 定时器函数里面this指向window
+        //         // btn.disabled = false;
+        //         // 但是有时候有很多的按钮，这样写就造成点击一个按钮所有的按钮都禁用，此时还是要用this，指向当前点击的按钮
+        //         this.disabled = false;
+        //     }.bind(this), 3000);  //这个this 指向的是btn 这个对象
+        // }
+
+        // 有很多按钮时
+        var btns = document.querySelectorAll('button');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                this.disabled = true;
+                setTimeout(function () {
+                    // btns[i].disabled = false;
+                    // for循环是立即执行的，所以当定时器结束时，i进行到了i = 4
+                    // 这时候btns[i]找不到这个对象，就会报错，所以这是要用this 指向按下的那个对象
+                    this.disabled = false;
+                }.bind(this), 3000)
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        div {
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            padding-left: 10px;
+        }
+
+        .wrong {
+            color: red;
+        }
+
+        .succuce {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="password">
+        <p class="message">请输入密码</p>
+
+        <!-- 
+            密码验证,密码长度符合要求提示正确,否则提示密码输入6-16位
+         -->
+        <script>
+            // 1.获取事件
+            var inp = document.querySelector('input');
+            var message = document.querySelector('p');
+
+            // 2.注册事件 失去焦点事件 onblur
+            inp.onblur = function () {
+                // 判断密码框内密码长度是否符合要求 inp.value.length
+                if (this.value.length < 6 || this.value.length > 16) {
+                    message.className = 'message wrong';
+                    message.innerHTML = '请输入密码6-16位';
+                } else {
+                    message.className = 'message succuce';
+                    message.innerHTML = '输入密码正确';
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

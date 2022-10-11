@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str1 = "pink";
+        var str2 = "blue";
+
+        // 1.concat(str1,str2,...) 拼接两个或者多个字符串，等效于+
+        var str3 = str1.concat(str2);
+        console.log(str3); //pinkblue
+
+        var str4 = str2.concat(str1);
+        console.log(str4); //bluepink
+
+        // 2.substr('截取的起始位置','截取几个字符')
+        // 截取的起始位置 是索引值
+        console.log(str3.substr(2, 3)); //nkb
+
+        // 3.替换字符 replace('被替换的字符','替换为字符')
+        // 只会替换第一个字符
+        var str5 = 'redred';
+        console.log(str5.replace('e', 5)); //r5dred
+
+        // 有一个字符串abcoefoxyozzopp 要求把里面的 o 都替换成 *
+        var str = "abcoefoxyozzopp";
+        while (str.indexOf('o') != -1) {
+            str = str.replace('o', '*');
+        }
+        console.log(str);
+
+        // 4.字符串转换为数组 split('分隔符')  前面 join('分隔符') 把数组转换为字符
+        // split('分隔符') 分隔符取绝于字符串中的分隔符
+        var str6 = 'red,blue,red';
+        console.log(str6.split(','));
+
+        var str7 = 'red&blue&red';
+        console.log(str7.split('&'));
+
+
+        var a = str.toUpperCase(); //全部转换大写
+        console.log(a);
+        var b = a.toLowerCase(); //全部转换小写
+        console.log(b);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // str.indexOf('查找的字符',[起始的位置]) 
+        // str.indexOf('查找的字符',[起始的位置]) 可以指定从哪一个位置开始查找
+        // 只返回第一个满足条件的索引号
+        // 如果找不到这个元素，返回-1
+        var str = "改革春分吹满地，春天";
+        // console.log(str.indexOf("春")); //2
+        console.log(str.indexOf("春", 3)); //8 这个3是指从索引值是3的元素开始查找
+
+        // str.lastIndexOf('查找的字符',[起始的位置])
+        // 只返回第一个满足条件的索引号
+        // 如果找不到这个元素，返回-1
+        console.log(str.lastIndexOf("春")); //8
+        console.log(str.lastIndexOf("春", 3)); // 2  这个3是指从倒数第三个元素开始查找
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

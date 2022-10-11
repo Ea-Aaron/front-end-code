@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.翻转数组
+        /* 
+        reverse() 方法将数组中元素的位置颠倒，并返回该数组。
+        数组的第一个元素会变成最后一个，数组的最后一个元素变成第一个。该方法会改变原数组。
+         */
+        // var arr = [1, 2, 3, 4, 5, 6];
+        var arr = ['blue', 'yellow', 'green']
+        arr.reverse();
+        console.log(arr);
+
+        // 2.数组排序（冒泡排序）
+        // sort() 方法用原地算法对数组的元素进行排序，并返回数组。
+        // 默认排序顺序是在将元素转换为字符串，然后比较它们的UTF-16代码单元值序列时构建的
+        var arr1 = [3, 15, 6, 77, 22, 1, 5];
+        arr1.sort(function (a, b) {
+            // return a - b; 升序排列
+            return b - a; //降序排列
+        });
+        console.log(arr1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

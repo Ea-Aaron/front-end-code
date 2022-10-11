@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            Map 对象保存键值对，并且能够记住键的原始插入顺序。任何值(对象或者原始值) 都可以作为一个键或一个值
+            一个Map对象在迭代时会根据对象中元素的插入顺序来进行 — 一个  for...of 循环在每次迭代后会返回一个形式为[key，value]的数组。
+        */
+
+        let m = new Map();
+
+        // 添加元素
+        m.set('name', 'aaron');
+        m.set('aeg', 18);
+        m.set(key = function () {
+            console.log('我是key');
+        }, [12, 22, 33]);
+
+        let key1 = {
+            uname: '嘀嘀嘀'
+        }
+        m.set(key1, '对象');
+
+        // 删除元素
+        // m.delete('name');
+
+        // 获取元素
+        // console.log(m.get('name'));
+
+        // 清空
+        // m.clear();
+
+        // 遍历
+        for (let v of m) {
+            console.log(v);
+        }
+
+        // console.log(m);
+    </script>
+</body>
+
+</html>

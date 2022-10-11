@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        严格模式：在IE10以上才支持  对正常的JavaScript语义做了一些更改
+            1.消除了JavaScript语法的一些不合理、不严谨之处，减少了一些怪异行为
+            2.消除代码运行的一些不安全之处，保证代码运行的安全
+            3.提高代码编译器效率，增加运行速度
+            4.禁用了在ECMAscript的未来版本中可能会定义的一些语法，为未来新版本的JavaScript做铺垫
+
+     -->
+    <!-- 为整个脚本开启严格模式 -->
+    <script>
+        'use strict';
+        // 下面的代码会按照严格模式执行代码
+    </script>
+    <script>
+        (function () {
+            // 将js代码放在立即执行函数里面
+            'use strict';
+            // 函数体
+        })();
+    </script>
+
+    <!-- 为某个函数开启严格模式 -->
+    <script>
+        function fun() {
+            'use strict';
+            // 下面的代码会按照严格模式执行代码
+        }
+        function fn() {
+            // 这里面的代码还是按照普通模式执行
+        }
+    </script>
+</body>
+
+</html>

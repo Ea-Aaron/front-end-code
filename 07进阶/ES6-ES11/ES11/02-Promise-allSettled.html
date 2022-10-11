@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 声明两个 promise 对象
+        const p1 = new Promise((resolve, reject) => {
+            resolve('商品数据 -1');
+        });
+        const p2 = new Promise((resolve, reject) => {
+            // resolve('商品数据 -2');
+            reject('出错了!!');
+        })
+
+        // 调用allSettled
+        // const result = Promise.allSettled([p1, p2]);
+        // allSettled 不论里面的 Promise 对象是成功还是失败,都会返回成功,并且会将里面每个 Promise 对象的结果输出
+
+        const result = Promise.all([p1, p2]);
+        // all 如果里面的 Promise 对象出现一个失败,则返回失败,并且输出失败的结果,不会打印成功的结果, 只有里面的 Promise 对象都为成功,才会返回成功,并且打印成功的信息
+
+        console.log(result);
+    </script>
+</body>
+
+</html>

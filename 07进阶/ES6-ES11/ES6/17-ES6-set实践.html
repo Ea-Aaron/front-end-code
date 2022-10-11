@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [1, 2, 3, 4, 5, 3, 2, 1, 4, 5];
+
+        // 数组去重
+        // console.log([...new Set(arr)]);
+
+        // 交集
+        const arr2 = [4, 5, 6, 5, 6, 1];
+        // const result = [...new Set(arr)].filter(item => {
+        //     // 对arr2 去重
+        //     let s = new Set(arr2); // 4,5,6,1
+        //     // 判断arr2里面是否有与arr相同的元素
+        //     if (s.has(item)) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // });
+        // // 简单写法
+        // const result = [...new Set(arr)].filter(item => new Set(arr2).has(item));
+        // console.log(result);
+
+        // 并集
+        // const uinon = [...new Set([...arr, ...arr2])];
+        // console.log(uinon);
+
+        // 差集
+        const diff = [...new Set(arr)].filter(item => !(new Set(arr2).has(item)));
+        console.log(diff);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="img/33.gif" alt="">
+    <!-- 
+        图片不占据位置,所以使用绝对定位
+     -->
+
+    <script>
+        var pic = document.querySelector('img');
+        document.addEventListener('mousemove', function (e) {
+            // 获取鼠标的x和y坐标
+            var x = e.pageX;
+            var y = e.pageY;
+            // console.log('x的坐标是:' + x + 'y的坐标是:' + y);
+
+            // 把鼠标的x和y值给图片的top 和 left
+            pic.style.top = y - 25 + 'px';
+            pic.style.left = x - 25 + 'px';
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 边界符 ^ $
+        var reg = /abc/;  //正则表达式里面不需要加引号 不管是数字型还是字符串型
+        // /abc/ 只要包含有abc这个字符串返回的都是true
+        console.log(reg.test('abc'));
+        console.log(reg.test('abcd'));
+        console.log(reg.test('aabc'));
+        console.log('==================');
+
+        var reg1 = /^abc/;  //以abc开头的字符串才返回true
+        console.log(reg1.test('abc'));
+        console.log(reg1.test('abcd'));
+        console.log(reg1.test('aabc'));
+        console.log('==================');
+
+        var reg2 = /abc$/;  //以abc结尾的字符串才返回true
+        console.log(reg2.test('abc'));
+        console.log(reg2.test('abcd'));
+        console.log(reg2.test('aabc'));
+        console.log('==================');
+
+        var reg3 = /^abc$/;  //精准匹配 要求必须是abc字符串猜符合规范
+        console.log(reg3.test('abc'));
+        console.log(reg3.test('abcd'));
+        console.log(reg3.test('aabc'));
+        console.log(reg3.test('abcabc'));
+    </script>
+</body>
+
+</html>

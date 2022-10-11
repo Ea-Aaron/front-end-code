@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+
+<body>
+    我是一段不愿意分享的文字
+
+    <script>
+        // 1.禁用鼠标右键菜单 contextmenu
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        })
+        // 2.禁用选中 selectstart
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        })
+
+        // 3.client  获得鼠标相对于可视化窗口的坐标
+        document.addEventListener('click', function (e) {
+            console.log(e.clientX);
+            console.log(e.clientY);
+            console.log("===============");
+        })
+
+        // 4.page  获得鼠标相对于文档页面的坐标
+        document.addEventListener('click', function (e) {
+            console.log(e.pageX);
+            console.log(e.pageY);
+            console.log("===============");
+        })
+
+        // 5.screen  获得鼠标相对于电脑屏幕的坐标
+        document.addEventListener('click', function (e) {
+            console.log(e.screenX);
+            console.log(e.screenY);
+            console.log("===============");
+        })
+    </script>
+</body>
+
+</html>

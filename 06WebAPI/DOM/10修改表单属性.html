@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <input type="text" value="请输入内容">
+
+    <script>
+        // 1.获取事件
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        // 注册事件 事件处理函数
+        btn.onclick = function () {
+            // input.innerHTML = "被点击了";  //无法生效，因为innerHTML是针对普通盒子的，例如div
+            input.value = "被点击了";
+
+            // btn.disabled = true;
+            this.disabled = true;
+            // this 指向事件函数的调用者 btn
+        }
+    </script>
+</body>
+
+</html>

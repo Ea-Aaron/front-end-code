@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        1.安装工具 babel-cli babel-preset-env browserify(webpack)  -D 表示开发者模式
+
+        2.npx babel 原文件的位置(js) -d 转换后的文件位置(dist/js) --presets=babel-preset-env
+        npx babel js -d dist/js --presets=babel-preset-env
+
+        3.打包 npx browserify 转换后入口文件的位置(dist/js/app.js) -o 打包后的入口文件位置(dist/bundle.js)
+        npx browserify dist/js/app.js -o dist/bundle.js
+
+        修改代码需要在转换之前的原文件中修改
+     -->
+
+    <script src="dist/bundle.js"></script>
+</body>
+
+</html>

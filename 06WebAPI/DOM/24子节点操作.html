@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>我是li0</li>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+    </ul>
+
+    <script>
+        // DOM提供的(API)获取
+        var ul = document.querySelector('ul');
+        var li = ul.querySelectorAll('li');
+        // 1.子节点
+        // childNodes 所有的子节点 包含 元素节点 文本节点等
+        console.log(ul.childNodes);
+        // 如果只想要获得里面的元素节点,则需要专门处理,所以一般不提倡使用childNodes
+        for (var i = 0; i < ul.childNodes.length; i++) {
+            if (ul.childNodes[i].nodeType == 1) {
+                // ul.childNodes[1]是元素节点
+                console.log(ul.childNodes[i]);
+            }
+        }
+
+        // 2.children 获取所有得到子元素节点 实际开发常用
+        console.log(ul.children);
+
+        // 3.firstChild 第一个子节点 不管文本节点还是元素节点都会获取
+        console.log(ul.firstChild);
+        console.log(ul.lastChild);
+
+        // 4.firstElementChild  返回第一个子元素节点  IE9支持
+        console.log(ul.firstElementChild);
+        console.log(ul.lastElementChild);
+
+        // 5.实际开发的写法 既没有兼容问题有返回第一个子元素节点
+        console.log(ul.children[0]);
+        console.log(ul.children[ul.children.length - 1]);
+    </script>
+</body>
+
+</html>

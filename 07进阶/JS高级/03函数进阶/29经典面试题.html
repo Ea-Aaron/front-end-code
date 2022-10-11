@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let arr = [];
+
+        for (let i = 0; i < 2; i++) {
+            arr[i] = function () {
+                console.log(i);
+            }
+        }
+
+        arr[0](); // 0
+        arr[1](); // 1
+        /*
+            for循环使用let 声明变量 i
+            在每一次循环的时候， 都会创建一个块级作用域
+            所以函数被调用的时候，会访问当前参数所在的块级作用域
+        */
+
+        // var arr = [];
+
+        // for (var i = 0; i < 2; i++) {
+        //     arr[i] = function () {
+        //         console.log(i);
+        //     }
+        // }
+
+        // arr[0](); //2
+        // arr[1](); //2
+        /*
+            var 没有块级作用域，且for循环时立即执行，一直结束
+            当函数区调用的时候 for循环已经执行完毕，此时 i = 2
+            所以函数的放回结果都是2
+        */
+    </script>
+</body>
+
+</html>

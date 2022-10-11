@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数方法 Array.from()
+        // 将类数组或可遍历对象转换为真正得到数组
+        // 返回值为转换后的 数组
+        // var obj = {
+        //     '0': '张三',
+        //     '1': '李四',
+        //     '2': '王五',
+        //     'length': 3
+        // }
+        // var arr = Array.from(obj);
+        // console.log(arr);
+
+        // Array.from()可以接收第二个参数，作用类似于数组的map方法，用来对每个数组进行处理，将处理后的值放入返回的数组
+        var obj = {
+            '0': 1,
+            '1': 2,
+            'length': 2
+        }
+        var arr = Array.from(obj, item => item * 2);
+        console.log(arr);
+    </script>
+</body>
+
+</html>

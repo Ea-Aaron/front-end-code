@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            id: 1,
+            uname: '小米',
+            price: 1999
+        }
+        // 1.以前修改和添加对象属性
+        // obj.num = 1000;
+        // obj.price = 2999;
+        // console.log(obj);
+
+        // 2.Object.defineProperty(obj, prop, descriptor)
+        // obj：必须    目标对象
+        // prop：必须   需定义或修改的属性名字
+        // descriptor：必须 目标属性所拥有的特性
+        /* 
+            第三个参数 descriptor 说明：以对象形式 {} 书写
+            value：设置属性的值 默认未undefined
+            writable：值是否可以重写（无法修改属性值）  true|false 默认为false
+            enumerable：目标属性是否可以被枚举（无法遍历出来这个属性）  true|false 默认为false
+            configurable：目标属性是否可以被删除或是否可以再次修改特性  true|false 默认为false
+        */
+        // 添加num属性
+        Object.defineProperty(obj, 'num', {
+            value: 1000
+        })
+        console.log(obj);
+
+        // 修改price属性值
+        Object.defineProperty(obj, 'price', {
+            value: 909
+        })
+        console.log(obj);
+
+        // id很重要，一个产品id号设定之后就不能修改
+        Object.defineProperty(obj, 'id', {
+            writable: false
+        })
+        obj.id = 3;
+        console.log(obj);
+
+        // 在家添加一个新属性，但是这个属性不能被遍历出来
+        // 这个属性可以被修改值，并且不能修改他的特性（writabl、enumerable等这些属性的值不能修改）
+        Object.defineProperty(obj, 'address', {
+            value: '武汉科技大学xx宿舍xx号',
+            writable: true,
+            enumerable: false,
+            configurable: false
+        })
+        console.log(obj);
+        for (var k in obj) {
+            console.log(k);
+        }
+
+        Object.defineProperty(obj, 'address', {
+            value: '武汉科技大学xx宿舍xx号',
+            writable: true,
+            enumerable: true,
+            configurable: true
+        })
+        console.log(obj.address);
+    </script>
+</body>
+
+</html>

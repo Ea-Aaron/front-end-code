@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.charAt(index) 返回指定位置的字符（index 字符串索引号）
+        var str = "aaron";
+        console.log(str.charAt(2)); //r
+        // 遍历字符串
+        for (var i = 0; i < str.length; i++) {
+            console.log(str.charAt(i));
+        }
+
+        // 2.charCodeAt(index) 返回指定位置处字符的ASCII码（index 字符索引号）
+        // 判断用户按下了哪个键
+        console.log(str.charCodeAt(0)); //97
+
+        // 3.str[index] 获取指定位置处字符 H5新增 IE9支持
+        console.log(str[2]); //r
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

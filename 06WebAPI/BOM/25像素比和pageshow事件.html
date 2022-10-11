@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="flexible.js"></script> -->
+</head>
+
+<body>
+
+    <script>
+        // console.log(window.devicePixelRatio);
+        // 如果使用load 在火狐浏览器中 后退会无法再次重置
+        // pageshow 重新加载页面触发的事件
+        window.addEventListener('pageshow', function () {
+            alert(11);
+        })
+    </script>
+    <a href="http://www.baidu.com">链接</a>
+</body>
+
+</html>

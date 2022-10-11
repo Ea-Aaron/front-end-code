@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <!-- 
+        给多个按钮全部添加点击事件,可以利用for循环
+     -->
+    <script>
+        //  1.获取事件
+        var btn = document.getElementsByTagName('button');
+        // btn返回的结果是一个伪数组,所以获取里面的元素,利用btn[i]
+        for (var i = 0; i < btn.length; i++) {
+            // 给每一个按钮添加事件函数
+            btn[i].onclick = function () {
+                // 当点击当前按钮是变颜色,其他按钮恢复原色
+                for (var i = 0; i < btn.length; i++) {
+                    btn[i].style.backgroundColor = '';
+                }
+                // 在设置被点击的按钮颜色
+                this.style.backgroundColor = 'blue';
+                console.log(11);
+            }
+        }
+
+        /*
+            排他思想:
+                1.所有元素全部清除样式(先干掉所有人)
+                2.设置自己的样式(留下我自己)
+                3.顺序不能颠倒,先干掉所有人,在留下自己
+         */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            display: block;
+            width: 150px;
+            height: 150px;
+            margin-top: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <span>aaron</span>
+    <button>点击运行Aaron</button>
+
+    <script>
+        // 简单动画函数封装  obj目标对象  target 目标位置
+        function animate(obj, target) {
+            // 每次调用新的对象，都会添加一个定时器，而且每个定时器的名字都是一样的 容易歧义
+            // 所以修改以下，给每个对象添加一个定时器，这一类对象，都用着一个定时器
+            // var obj = {};
+            // obj.name = 'aaron';
+
+            // 解决按钮多级点击，创建了多个定时器的问题
+            // 让定时器每次执行前，先把以前的定时器清除,只保留当前的定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                // 停止动画 本质是停止定时器
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                } else {
+                    obj.style.left = obj.offsetLeft + 5 + 'px';
+                }
+            }, 30)
+        }
+
+        var div = document.querySelector('div');
+        animate(div, 300);
+
+        // 这样有一个问题，当我多次点击按钮，元素的速度会原来越快 并且会超出屏幕
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            animate(span, 200);
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <ul>
+        <li>熊大</li>
+        <li>熊二</li>
+        <li>光头强</li>
+    </ul>
+
+    <script>
+        // 1.获取事件
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+        // 2.注册事件
+        btn.onclick = function () {
+            // 删除完成后按钮禁用
+            if (ul.children.length == 0) {
+                btn.disabled = true;
+            }
+            ul.removeChild(ul.children[0]);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            position: absolute;
+            display: block;
+            width: 150px;
+            height: 150px;
+            margin-top: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <span>aaron</span>
+    <button class="btn500">点击运行Aaron到500</button>
+    <button class="btn800">点击运行Aaron到800</button>
+
+    <script>
+        // 缓动动画 让动画移动的距离慢慢变小 就可以实现 活动动画变慢的效果
+        // 简单动画函数封装  obj目标对象  target 目标位置
+        function animate(obj, target) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                // 步长写到定时器里面
+                // 步长计算公式：（目标值 - 当前的位置） / 10
+                // var step = Math.ceil((target - obj.offsetLeft) / 10);
+
+                // 但是当返回的时候，走不到目标位置
+                // 当步长大于0是，向上取整  当步长小于0时，向下取整
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+                // 停止动画 本质是停止定时器
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                } else {
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }
+            }, 30)
+        }
+
+        // 这样会有一个问题 元素到不了我们的目标位置
+        // 因为步长可能会取到小数 所以要消除小数的影响
+        // 【注】步长是向上取整 Math.ceil();
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+
+        btn500.addEventListener('click', function () {
+            animate(span, 500);
+        })
+        btn800.addEventListener('click', function () {
+            animate(span, 800);
+        })
+        // 匀速动画 盒子当前的位置 + 固定的值
+        // 缓动动画 盒子当前的位置 + 变化的值（目标值 - 当前的位置） / 10
+
+    </script>
+</body>
+
+</html>

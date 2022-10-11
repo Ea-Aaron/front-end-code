@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 查找数组 some(function(currentValue, index, arr))
+        // some() 方法用于检测数组中的元素是否满足条件 就是查找数组中是否有满足条件的元素
+        // 【注】 它返回值是一个布尔值，如果查找到这个元素，就返回true ，否则返回 false
+        // 如果找到第一个满足条件的元素，则终止循环
+        // var arr1 = [1, 2, 5, 3, 6, 5, 555];
+        // var flag = arr1.some(function (value) {
+        //     // return value >= 20;
+        //     return value < 0;
+        // })
+
+        var arr2 = ['aaron', 'red', 'blue'];
+        var flag = arr2.some(function (value) {
+            return value === 'red';
+        })
+        console.log(flag);
+
+        // 1.filter 查找满足条件的元素 返回一个数组 并且事发所有满足条件的元素返回
+        // 2.some 查找满足条件的元素 返回一个布尔值 如果找到第一个满足条件的元素，则终止循环
+    </script>
+</body>
+
+</html>

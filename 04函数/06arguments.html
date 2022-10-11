@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // arguments
+        function fn() {
+            console.log(arguments); //里面存储了所有的实参
+            console.log(arguments.length);
+            console.log(arguments[1]);
+            // arguments可以进行遍历
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        fn(1, 9, 3, 66, 151, 516, 5641);
+        /*
+            arguments展示形式时一个伪数组
+                1.可以进行遍历
+                2.具有length属性
+                3.按照索引方式存储数据
+                4.不具有数组的push，pop等方法
+         */
+
+        //利用函数求取任意数的最大值
+        /* function getMax() {
+            var numMax = arguments[0];
+            for (var i = 0; i < arguments.length; i++) {
+                if (numMax < arguments[i]) {
+                    numMax = arguments[i];
+                }
+            }
+            return numMax;
+        }
+
+        console.log(getMax(1, 22, 55, 12, 35, 55, 64, 90, 200, 5, 6, 8)); */
+
+        //利用函数翻转任意元素个数的数组
+        /* function re(arr) {
+            var tem = 0;
+            var j = 0;
+            var newarr = [];
+            for (var i = arguments.length - 1; i >= 0; i--) {
+                newarr[j] = arguments[i];
+                j++;
+            } 
+        var newarr = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+            newarr[newarr.length] = arr[i];
+        }
+        return newarr;
+        }
+
+        console.log(re([1, 2, 3]));
+        console.log(re([5, 6, 8, 2, 4, 11, 55, 66, 20, 8, 4, 9])); */
+
+        //封装冒泡排序
+        function sort(arr) {
+            var tem = 0;
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        tem = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tem;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        console.log(sort([5, 4, 3, 2, 1]));
+        console.log(sort([5, 6, 1, 2, 8, 9]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。
+        // Set() 不能用length来算出元素长度，只能用size
+        const s1 = new Set();
+        console.log(s1);
+        console.log(s1.size);
+        console.log("============");
+
+        const s2 = new Set(['a', 'b']);
+        console.log(s2);
+        console.log(s2.size);
+        console.log("============");
+
+        // 把Set转化为u真正的数组
+        const s3 = new Set(["a", "a", "b", "b"]);
+        console.log(s3.size);
+        const arr = [...s3];
+        console.log(arr);
+        console.log("============");
+
+        const s4 = new Set();
+        // 向Set结构中添加值，使用 add()
+        s4.add('a').add('b');
+        console.log(s4.size);
+        console.log("============");
+
+        // 删除数据 delete
+        // 原Set结构中存在这个元素，返回true ，没有这个元素返回false
+        // const del = s4.delete('a');
+        // console.log(del);  //true
+        // const del = s4.delete('d');
+        // console.log(del); //false
+        // console.log(s4.size);
+        // console.log("============");
+
+        // 判断元素是否属于Set结构中的成员 has()
+        const has = s4.has('a');
+        console.log(has);
+        console.log("============");
+
+        // 清空Set结构中的成员  clear()
+        // s4.clear();
+        // console.log(s4.size); //0
+        // console.log("============");
+
+        // 遍历Set结构
+        const s5 = new Set(['a', 'b', 'c']);
+        // s5.forEach(item => {
+        //     console.log(item);
+        // });
+        for (let v of s5) {
+            console.log(v);
+        }
+    </script>
+</body>
+
+</html>

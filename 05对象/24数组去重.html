@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 有一个数组['c','a','z','a','x','a','x','c','b'],要求去除数组中重复的元素
+        /* 
+            核心算法：
+                1.遍历旧数组,将旧数组元素存进新数组
+                2.判断新数组中有没有这个元素，如果有就不存储，没有就存储进新数组
+        
+            === 表示全等 格式和值都相等
+            2 == '2' 返回结果是true
+         */
+        var arr = ['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b'];
+        var newarr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (newarr.indexOf(arr[i]) === -1) {
+                newarr.push(arr[i]);
+            }
+        }
+        console.log(newarr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

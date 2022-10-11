@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 接口地址: https://api.apiopen.top/getJoke
+
+        // 使用promise封装
+        const p = new Promise((resolve, reject) => {
+            // 创建对象
+            const xhr = new XMLHttpRequest();
+
+            // 初始化
+            xhr.open('GET', 'https://api.apiopen.top/getJoke');
+
+            // 发送
+            xhr.send();
+
+            // 绑定事件
+            xhr.onreadystatechange = function (request, response) {
+                // 判断
+                if (xhr.readyState === 4) {
+                    // 判断响应状态码
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        // 成功则打印内容
+                        console.log(xhr.response);
+                    } else {
+                        console.log(xhr.status);
+                    }
+                }
+            }
+        });
+
+        // 调用promise对象
+        p.then(function (value) {
+            console.log(value);
+        }, function (reason) {
+            console.error(reason);
+        })
+    </script>
+</body>
+
+</html>

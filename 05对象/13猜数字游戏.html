@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 设定一个随机生成1~10的数字
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(getRandom(1, 10));
+
+        var num = getRandom(1, 50);
+        // console.log(num);
+        // 一直循环，直到猜对了才结束程序
+        var count = 0;
+        while (true) {
+            // 判断猜的次数，超过10次没猜出来，就退出循环
+            if (count < 10) {
+                count++;
+                var user = parseInt(prompt("请输入一个数字："));
+                if (user > num) {
+                    alert("数字大了，请继续猜！");
+                } else if (user < num) {
+                    alert("数字小了，请继续猜！");
+                } else {
+                    alert("猜对了！");
+                    break;
+                }
+            } else {
+                alert("10次机会用完了");
+                break;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

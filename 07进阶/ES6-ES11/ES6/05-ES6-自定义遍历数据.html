@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 声明一个对象
+        const lol = {
+            name: "LOL",
+            id: [
+                'Ming',
+                'Ning',
+                'Tian',
+                'Knight'
+            ],
+            [Symbol.iterator]() {
+                // 索引变量
+                let index = 0;
+                let _this = this;
+                return {
+                    next: function () {
+                        if (index < _this.id.length) {
+                            const result = { value: _this.id[index], done: false };
+                            // 索引值自增
+                            index++;
+                            // 返回结果
+                            return result;
+                        } else {
+                            return { value: undefined, done: true };
+                        }
+                    }
+                }
+            }
+        }
+
+        for (let v of lol) {
+            console.log(v);
+        }
+    </script>
+</body>
+
+</html>

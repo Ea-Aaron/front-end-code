@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        节点
+            节点至少拥有nodeType(节点类型) nodeName(节点名称) nodeValue(节点值)
+            
+            元素节点 nodeType:1
+            属性节点 nodeType:2
+            文本节点 nodeType:3 (文本节点包含文字,空格,换行等)
+
+        直接开发中,节点操作主要操作 元素节点
+     -->
+    <div class="box">
+        <div class="box">
+            <span class="erweima">x</span>
+        </div>
+    </div>
+
+    <script>
+        //  1.父亲节点 parentNode
+        var erweima = document.querySelector('.erweima');
+        // var box = document.querySelector('.box');
+        // 得到的是离元素最近的父级节点(亲爸爸) 如果找不到父级节点 就返回 null
+        console.log(erweima.parentNode);
+    </script>
+</body>
+
+</html>

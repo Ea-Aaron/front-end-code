@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.push() 在数组的末尾添加一个或者多个数组元素 push 推
+        var arr = [1, 2, 3];
+        // arr.push(4, 'Aaron');
+        // console.log(arr.push(4, "Aaron"));
+        // console.log(arr);
+        // （1）push() 是可以给数组追加新的元素
+        // （2）push() 参数可以直接写数组元素
+        // （3）push() 的返回值是新数组的长度
+        // （4）原数组也会发生变化
+
+        // 2.unshift() 在数组的开始添加一个或者多个数组元素
+        // console.log(arr.unshift('blue', '9'));
+        // console.log(arr);
+        // （1）unshift() 是可以给数组追加新的元素
+        // （2）unshift() 参数可以直接写数组元素
+        // （3）unshift() 的返回值是新数组的长度
+        // （4）原数组也会发生变化
+
+        // 3.pop() 删除数组的最后一个元素
+        // console.log(arr.pop());
+        // console.log(arr);
+        // （1）pop() 删除数组最后一个元素，一次只能删除一个
+        // （2）pop() 没有参数
+        // （3）pop() 的返回值是被删除的元素
+        // （4）原数组也会发生变化
+
+        // 4.shift() 删除数组的第一个元素
+        // console.log(arr.shift());
+        // console.log(arr);
+        // （1）shift() 删除数组第一个元素，一次只能删除一个
+        // （2）shift() 没有参数
+        // （3）shift() 的返回值是被删除的元素
+        // （4）原数组也会发生变化
+
+        // 5.slice(begin,end) 数组截取 
+        var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // console.log(arr1.slice(2, 5));
+        // console.log(arr1);
+        // （1）slice(begin,end) begin 和 end 都是索引值
+        // （2）slice(begin,end) 返回值为从begin开始到end结束之间的元素，但是不含end索引值的元素所组成的数组
+        // （3）原数组不改变
+
+        // 6.splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容
+        var arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // console.log(arr2.splice(2, 2));
+        // console.log(arr2);
+
+        // console.log(arr2.splice(2, 0, 'aaron'));
+        console.log(arr2.splice(2, 1, 6));
+        console.log(arr2);
+        // （1）splice() 第一个参数是索引值
+        // （2）splice 返回值为由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。
+        // （3）原数组发生改变
+
+        // 7. concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
+        var array1 = [1, 2, 3];
+        var array2 = [4, 5, 6];
+        var array3 = array1.concat(array2); //[1, 2, 3, 4, 5, 6]
+        // var array3 = array2.concat(array1); //[4, 5, 6, 1, 2, 3]
+        // console.log(array3);
+
+        var num1 = [1, 2, 3],
+            num2 = [4, 5, 6],
+            num3 = [7, 8, 9];
+
+        var nums = num1.concat(num2, num3);
+
+        // console.log(nums); //[1, 2, 3, 4, 5, 6, 7, 8, 9]
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

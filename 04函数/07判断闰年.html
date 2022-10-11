@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 闰年的条件时能被4整除但是不能被100整除或者被400整除
+        /* function year(year) {
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                console.log(year + "是闰年");
+            } else {
+                console.log(year + "不是闰年");
+            }
+        }
+        year(2029); */
+
+        function rn() {
+            for (var i = 0; i < arguments.length; i++) {
+                if (arguments[i] % 4 == 0 && arguments[i] % 100 != 0 || arguments[i] % 400 == 0) {
+                    console.log(arguments[i] + "是闰年");
+                } else {
+                    console.log(arguments[i] + "不是闰年");
+                }
+            }
+        }
+
+        rn(2020, 2019, 2018, 2016, 2015);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

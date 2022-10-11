@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 只要2333这一段数字
+        // 声明字符串
+        let str = 'JS2020124正则扩展2333反向断言';
+
+        // 正向断言
+        // const reg = /\d+(?=反)/;
+        // const result = reg.exec(str);
+
+        // 反向断言
+        const reg = /(?<=展)\d+/;
+        const result = reg.exec(str);
+
+        console.log(result);
+    </script>
+</body>
+
+</html>

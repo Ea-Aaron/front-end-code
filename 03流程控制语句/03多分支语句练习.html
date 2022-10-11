@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            评估教师的分数
+                85~100  优秀
+                    95~100  奖励1000
+                    90~95   奖励800
+                    85~90   奖励300
+                75~85   良好
+                60~75   及格
+                0~60    不及格
+         */
+        
+        var score = 95;
+        if (score > 85 && score <= 100) {
+            alert("优秀");
+            if (score > 95 && score <= 100) {
+                alert("奖励1000元");
+            }else if (score > 90 && score <= 95) {
+                alert("奖励800元");
+            }else {
+                alert("奖励300元");
+            }
+        }else if (score > 75 && score <= 85) {
+            alert("良好");
+        }else if (score > 60 && score <= 75) {
+            alert("及格");
+        }else {
+            alert("不及格");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

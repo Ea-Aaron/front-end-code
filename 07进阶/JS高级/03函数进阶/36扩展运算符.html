@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+
+    <script>
+        // 扩展运算符可以将数组拆分成以逗号分隔的参数序列
+        // let arr = ['a', 'b', 'c'];
+        // // ...arr  //'a','b','c'
+        // console.log(...arr);
+        // console.log('a', 'b', 'c');
+
+        // 扩展运算符应用于数组合并
+        let arr1 = [1, 2, 3];
+        let arr2 = [4, 5, 6];
+        // let arr3 = [...arr1, ...arr2];
+        // console.log(arr3); //[1, 2, 3, 4, 5, 6]
+
+        // 合并数组的第二种方法
+        arr1.push(...arr2);
+        // console.log(arr1);
+
+        // 将类数组或可遍历对象转换成为真正的数组
+        let divs = document.querySelectorAll('div');
+        console.log(divs);
+        const arr = [...divs];
+        console.log(arr);
+        // 转换成数组之后，可以使用数组的方法
+        arr.push('a');
+        console.log(arr);
+    </script>
+</body>
+
+</html>

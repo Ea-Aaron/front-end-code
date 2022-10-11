@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Phone {
+            get price() {
+                console.log('价格被读取了');
+                return 'aklsndkl';  //返回的结果就是实例化的结果
+            }
+            // set 必须要有形参
+            set price(value) {
+                console.log('价格被修改了');
+            }
+        }
+
+        let s = new Phone();
+        // console.log(s.price);
+        s.price = 222;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 生成器就是一个特殊的函数
+        // 异步编程  以前解决方案:纯回调函数    node fs Ajax mongodb
+        // yield 函数代码的分隔符
+        // * 放在function 和 函数名之间,不能省略
+        function* gen() {
+            // console.log(111);
+            yield '一时没有耳朵';
+            // console.log(222);
+            yield '一直没有尾巴';
+            // console.log(333);
+            yield '真奇怪';
+            // console.log(444);
+        };
+
+        let iterator = gen();
+        // console.log(iterator); //无法调用
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+
+        // 遍历
+        // for (let v of gen()) {
+        //     console.log(v);
+        // }
+    </script>
+</body>
+
+</html>

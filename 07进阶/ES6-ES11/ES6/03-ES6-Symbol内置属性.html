@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol内置属性</title>
+</head>
+
+<body>
+    <script>
+        // class Person {
+        //     static [Symbol.hasInstance](person) {
+        //         console.log(person);
+        //         console.log("我被用来检测了");
+        //         return true;
+        //     }
+        // }
+        // let o = {};
+        // console.log(o instanceof Person);
+
+        const arr = [1, 2, 3];
+        const arr1 = [4, 5, 6];
+        // 是否让 arr1 合并之后展开
+        arr1[Symbol.isConcatSpreadable] = false;
+        console.log(arr.concat(arr1)); //[1, 2, 3, Array(3)]
+    </script>
+</body>
+
+</html>

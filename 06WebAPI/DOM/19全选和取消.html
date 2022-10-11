@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            margin: 200px auto;
+            width: 500px;
+            text-align: center;
+            border: 1px solid skyblue;
+            border-collapse: collapse;
+        }
+
+        thead th {
+            background-color: skyblue;
+            height: 30px;
+
+        }
+
+        th,
+        td {
+            border: 1px solid #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>
+                <input type="checkbox" id="j_cbAll">
+            </th>
+            <th>商品</th>
+            <th>价格</th>
+        </thead>
+        <tbody id="j_tb">
+            <tr>
+                <td>
+                    <input type="checkbox" name="" id="">
+                </td>
+                <td>华为</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="" id="">
+                </td>
+                <td>华为</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="" id="">
+                </td>
+                <td>华为</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="" id="">
+                </td>
+                <td>华为</td>
+                <td>2000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // 1.获取元素
+        var j_cbAll = document.getElementById('j_cbAll');
+        var j_tb = document.getElementById('j_tb').getElementsByTagName('input');
+        // 2.注册事件
+        // 全选框点击之后所有框都被选中
+        j_cbAll.onclick = function () {
+            // console.log(this.checked); this.checked就是全选框的状态
+            for (var i = 0; i < j_tb.length; i++) {
+                j_tb[i].checked = this.checked;
+            }
+        }
+        // 下面的复选框只有有一个没有选中,那么全选框都不会选中
+        for (var i = 0; i < j_tb.length; i++) {
+            // 每次点击,都要检查所有的复选框有没有一个没有选中,有全选框就不选中
+            j_tb[i].onclick = function () {
+                // flag控制全选框是否选中
+                var flag = true;
+                for (var i = 0; i < j_tb.length; i++) {
+                    if (!j_tb[i].checked) {
+                        flag = false;
+                        break;
+                        // break 退出循环,这样只要检查到有一个没选中,就退出循环,提高效率
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

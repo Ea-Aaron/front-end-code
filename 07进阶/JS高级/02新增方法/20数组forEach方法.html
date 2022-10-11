@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3];
+        var sum = 0;
+        // 迭代（遍历）方法 forEach(function(currentValue, index, arr))
+        arr.forEach(function (value, index, arr) {
+            console.log('数组当前的值：' + value);
+            console.log('数组当前项的索引号：' + index);
+            console.log('数组对象本身：' + arr);
+            sum += value;
+        })
+        console.log(sum);
+    </script>
+</body>
+
+</html>

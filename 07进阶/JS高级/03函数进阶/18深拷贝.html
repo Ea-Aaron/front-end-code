@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 深拷贝拷贝多层, 每一级别的数据都会拷贝.
+        var obj = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                age: 18
+            },
+            color: ['pink', 'red']
+        };
+        var o = {};
+        // 封装函数
+        function deepCopy(newobj, oldobj) {
+            for (var k in oldobj) {
+                // 判断获取的是那种数据类型
+                var item = oldobj[k];
+                if (item instanceof Array) {
+                    // 1.数组
+                    newobj[k] = [];
+                    deepCopy(newobj[k], item);
+                } else if (item instanceof Object) {
+                    // 2.对象
+                    newobj[k] = {};
+                    deepCopy(newobj[k], item);
+                } else {
+                    // 普通数据
+                    newobj[k] = item;
+                }
+            }
+        };
+        deepCopy(o, obj);
+        console.log(o);
+        // 深拷贝重新在规划一个区域，修改新对象的数据，不会改变原有数据
+        o.msg.age = 20;
+        console.log(obj);
+    </script>
+</body>
+
+</html>

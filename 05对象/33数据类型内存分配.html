@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            简单数据类型又叫做基本数据类型或者值类型，复杂类型又叫做引用类型
+            （1）值类型：简单数据类型/基本数据类型，在存储时变量中存储的是值本身，因此也叫做值类型
+                String、Number、Boolean、undefined、null
+            （2）引用类型：复杂数据类型，在存储是变量中存储的是地址（引用），因此叫做引用数据类型
+                通过new关键字创建的对象（系统对象，自定义对象），例如：Object、Array、Date等
+
+         */
+
+        // null 返回的是一个空的的对象 Object
+        var a = null;
+        console.log(typeof a); //object
+        // 有一个变量以后打算存储为对象，暂时没想好存储什么，可以先定义为null
+
+        /*
+            栈（操作系统）：由操作系统自动分配存放函数的参数值、局部变量的值等
+                简单数据类型存放到栈
+            堆（操作系统）：存储复杂数据类型（对象），一般由程序员分配释放，若程序员不释放，有垃圾回收机制回收
+                复杂数据类型存放到堆
+
+            【注】JavaScript中没有堆栈的概念，通过堆栈更好的理解代码的执行
+
+            简单数据类型：存放在栈中，里面直接开辟一个空间存放的是值
+            复杂数据类型：搜现在栈中存放地址（十六进制表示），这个地址指向堆中的值
+         */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

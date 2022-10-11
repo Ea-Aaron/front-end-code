@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            // 共有属性
+            name;
+            // 私有属性
+            #age;
+            #weight;
+            // 构造方法
+            constructor(name, age, weight) {
+                this.name = name;
+                this.#age = age;
+                this.#weight = weight;
+            }
+            into() {
+                console.log(this.name);
+                console.log(this.#age);
+                console.log(this.#weight);
+            }
+        }
+
+        // 实例化
+        const man = new Person('崽崽', 22, '50kg');
+        console.log(man);
+
+        // 私有属性不能在 类 外面调用
+        // console.log(man.#age);
+
+        man.into();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函数的调用方式
+
+        // 1.普通函数
+        function fn() {
+            console.log('我好帅！！');
+        };
+        // fn(); fn.call();  //函数名() 才能调用
+
+        // 2.对象的方法
+        var o = {
+            saiHi: function () {
+
+            }
+        }
+        o.saiHi();
+
+        // 3.构造函数
+        function Star() { }
+        new Star();
+
+        // 4.绑定事件函数
+        btn.onclick = function () { }; //点击按钮之后就会调用这个函数
+
+        // 5.定时器函数
+        // setInterval(function () { }, 1000)  //每隔1s定时器会自动调用一次
+
+        // 6.立即执行函数
+        (function () {
+            console.log('我好帅！！');
+        })();
+        //立即执行函数是自动调用
+    </script>
+</body>
+
+</html>

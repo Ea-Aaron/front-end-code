@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+                1.编写一个函数，计算两个数字的和、差、积、商
+                    要求：使用传参的形式
+             */
+        /* function num(num1, operator, num2) {
+            // operator通过运算符，来进行和、差、积、商
+            switch(operator) {
+                case "+":
+                    return num1 + num2;
+                    break;
+                case "-":
+                    return num1 - num2;
+                    break;
+                case "*":
+                    return num1 * num2;
+                    break;
+                case "/":
+                    return num1 /num2;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        alert(num(3, "+", 4)); */
+
+        //3.编写一个函数，输入n为偶数时，调用函数求1/2+1/4+...+1/n,当输入n为奇数时，调用函数求/1+1/3+...+1/n 
+        function sum(n) {
+            var num = 0;
+            //当n为偶数时
+            if(n % 2 == 0) {
+                for(i = 1; i <= n; i++) {
+                    if(i % 2 == 0) {
+                        num += 1/i;
+                    }
+                }
+            }else {
+                for(i = 1; i <= n; i++) {
+                    if(i % 2 != 0) {
+                        num += 1/i;
+                    }
+                }
+            }
+            document.write(num);
+        }
+
+        sum(3);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

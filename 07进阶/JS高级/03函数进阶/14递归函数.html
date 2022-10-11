@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 递归函数：函数内部自己调用自己，这个函数就是递归函数
+        // 递归函数必须添加退出条件，否则会一直调用，造成栈溢出，报错
+        var num = 1;
+        function fun() {
+            console.log('打印6菊花');
+            if (num == 6) {
+                return;
+            }
+            num++;
+            fun();
+        }
+        fun();
+    </script>
+</body>
+
+</html>

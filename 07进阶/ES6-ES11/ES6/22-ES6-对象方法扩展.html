@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.Object.is 判断两个值是否相等
+        // console.log(Object.is(123, 12)); // 类似于===
+        // console.log(Object.is(NaN, NaN)); //true
+        // console.log(NaN === NaN); //false
+
+        // 2.Object.assign 对象的合并
+        // const Person1 = {
+        //     host: '127.0.0.1',
+        //     port: 3306,
+        //     name: 'admin',
+        //     pass: 'admin',
+        //     text: 'text1'
+        // };
+        // const Person2 = {
+        //     host: 'localhost',
+        //     port: 4408,
+        //     name: 'root',
+        //     pass: 'root',
+        //     text2: 'text'
+        // }
+        // console.log(Object.assign(Person1, Person2));
+
+        // 3.Object.setPrototypeof 设置原型对象  Object.getPrototypeof 获取原型对象
+        const school = {
+            name: 'aaron'
+        };
+        const city = {
+            xuexiao: ['wuhan', 'xianling', 'jiayu']
+        };
+        Object.setPrototypeOf(school, city);
+        console.log(Object.getPrototypeOf(school));
+        console.log(school);
+    </script>
+</body>
+
+</html>

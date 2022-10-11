@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+               求两个数的和。
+
+               封装函数步骤：
+                   1、分析不确定值
+                   2、将不确定值声明称形参
+                   3、函数名和形参名都要见名思意。
+            */
+
+        /* 
+            程序员可能对函数运行的结果有不同的处理方式。
+            【注】我们不能够将函数运行的结果写在函数里面。
+         */
+        /* 
+            return 关键字
+            有参数有返回值的函数：
+                格式：
+                    function 函数名(形参1, 形参2...){
+                        函数体;
+                        return 表达式;
+                    }
+            【注】return后面写什么的表达式，函数调用的结果就是return后面表达式的值。
+
+            【注】函数运行的时候，如果遇到return关键字，整个函数会终止。
+                  return只会返回一个值，就算用逗号隔开，也只会返回最后一个值              
+         */
+        /* function add(a, b) {
+            return a + b;
+        } */
+
+        // alert(add(3, 4));
+
+
+        /* var num = add(5, 6);
+        alert(num); */
+
+        /* function show(){
+                alert(1);
+                return;
+                alert(2);
+            }
+
+        show(); */
+
+        // 求两个数的最大值
+        /* function getMax(num1, num2) {
+            if (num1 > num2) {
+                return num1;
+            } else {
+                return num2;
+            }
+        }
+
+        console.log(getMax(25, 60));
+        console.log(getMax(100, 5)); */
+
+        // 求数组中的最大值
+        function getArr(arr) {
+            var max = arr[0];
+            for (var i = 0; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        // var arr = [1, 50, 60, 20, 44, 90, 44];
+        // console.log(getArr(arr));
+        // console.log(getArr([20, 50, 60, 10, 11, 22, 55, 90, 45, 100]));
+        // 在实际开发中，常用一个变脸来接收函数的返回结果
+        var aaron = getArr([11, 22, 55, 90, 45, 100])
+        console.log(aaron);
+
+
+        // 返回多个值，可以用数组来返回
+        function getResult(num1, num2) {
+            return [num1 + num2, num1 * num2, num1 - num2, num1 / num2];
+        }
+        var re = getResult(2, 4);
+        console.log(re);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

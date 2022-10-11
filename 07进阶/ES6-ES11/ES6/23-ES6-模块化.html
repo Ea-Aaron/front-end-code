@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        模块化: 将一个大的程序文件,拆分成许多小的文件,然后将小文件组合起来
+
+        模块化的优势:
+                1) 防止命名冲突
+                2) 代码复用
+                3) 高维护性
+
+        模块化语法:
+                1) export 命令用于规定模块的对外接口
+                2) import 命令用于输入其他模块提供的功能
+     -->
+    <script type="module">
+        // 1.通用方法
+        // 引入 m1.js 模块内容  * as 表示全部导入 as 后面的参数是别名
+        // import * as m1 from "./js/m1.js";
+
+        // // 引入 m2.js 模块内容
+        // import * as m2 from "./js/m2.js";
+
+        // //  引入m3.js 模块内容
+        // import * as m3 from "./js/m3.js";
+        // console.log(m3);
+
+        // 调用 m3.js 里面的方法
+        // m3.default.change();
+
+        // 2.解构赋值形式
+        // import { school, stu } from "./js/m1.js";
+        // import { school as wuhan, stu as student } from "./js/m2.js";
+        // 这里重名了, 使用 as 别名  的形式修改名字
+        // console.log(wuhan);
+        // console.log(student);
+
+        // import { default as m3 } from "./js/m3.js";
+        // console.log(m3);
+
+        // 3.简便写法 只针对默认暴露
+        // import m3 from "./js/m3.js";
+        // console.log(m3);
+    </script>
+
+    <!-- 直接调用入口文件 type="module"不能省略 -->
+    <script src="js/app.js" type="module"></script>
+</body>
+
+</html>

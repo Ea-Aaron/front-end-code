@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const p = new Promise((resolvt, reject) => {
+            setTimeout(() => {
+                resolvt('用户数据');
+            }, 1000)
+        });
+
+        //调用 then 方法  then方法的返回结果是 Promise 对象, 对象状态由回调函数的执行结果决定
+        //1. 如果回调函数中返回的结果是 非 promise 类型的属性, 状态为成功, 返回值为对象的成功的值
+        // Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled(resolve)（已成功）和rejected（已失败）
+        // const result = p.then(value => {
+        //     console.log(value);
+        //     // 非 promise 类型
+        //     // return 123;
+        //     // 是 promise 对象
+        //     // return new Promise((resolvt, reject) => {
+        //     //     resolvt('ok');
+        //     //     reject('err');
+        //     // });
+        //     // 3.抛出错误
+        //     // throw new Error('出错了!');
+        //     throw '出错了!';
+        // }, reason => {
+        //     console.warn(reason);
+        // });
+
+        // console.log(result);
+
+        // 链式调用
+        p.then(value => {
+
+        }, reason => {
+
+        }).then(value => {
+
+        }, reason => {
+
+        })
+    </script>
+</body>
+
+</html>

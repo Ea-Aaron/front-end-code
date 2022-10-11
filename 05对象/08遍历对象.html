@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj = {
+            uname: '张三丰',
+            age: 18,
+            sex: '男',
+            sayHi: function () {
+                console.log("hi~");
+            }
+        }
+
+        /* console.log(obj.uname);
+        console.log(obj, sex);
+        console.log(obj.age); */
+
+        // for in 遍历对象
+        /* 
+            for(var 变量 in 对象) {
+                console.log(对象[变量]);
+            }
+
+            这个变量一般写 k 或者 key
+         */
+        for (var k in obj) {
+            console.log(k); //k 变量 输出得到的是 属性名
+            console.log(obj[k]); //obj[k] 得到的是 属性值
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

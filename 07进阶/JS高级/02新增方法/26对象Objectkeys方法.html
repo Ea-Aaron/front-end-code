@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Object.keys() 用于获取对象自身所有的属性
+        // 效果类似于for...in
+        // 【注】返回的是一个由属性名数组
+        var obj = {
+            id: 1,
+            name: 'xiaomi',
+            price: 1999,
+            num: 2999
+        }
+        var arr = Object.keys(obj);
+        console.log(arr);
+        arr.forEach(function (value) {
+            console.log(value);
+        })
+    </script>
+</body>
+
+</html>

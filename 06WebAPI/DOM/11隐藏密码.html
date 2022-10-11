@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 500px;
+            margin: 100px auto;
+            border-bottom: 1px solid #ccc;
+        }
+
+        div input {
+            width: 400px;
+            border: 0;
+            outline: none;
+        }
+
+        div label {
+            position: absolute;
+            top: -12px;
+            right: 16px;
+            font-weight: 700;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="" id="btn">-</label>
+        <input type="password" id="paw">
+    </div>
+
+    <script>
+        // 1.获取事件
+        var btn = document.getElementById('btn');
+        var paw = document.getElementById('paw');
+        var flag = 0;
+        // 2.注册事件 事件处理
+        btn.onclick = function () {
+            if (flag == 0) {
+                paw.type = "text";
+                btn.innerHTML = "+";
+                flag = 1;
+            } else {
+                paw.type = "password";
+                btn.innerHTML = "-";
+                flag = 0;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

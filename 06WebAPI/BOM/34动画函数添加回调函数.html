@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            position: absolute;
+            display: block;
+            width: 150px;
+            height: 150px;
+            margin-top: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <span>aaron</span>
+    <button class="btn500">点击运行Aaron到500</button>
+    <button class="btn800">点击运行Aaron到800</button>
+
+    <script>
+        // 当元素走到800的时候，将颜色变为红色
+        // 先走完，再变色
+
+        // 简单动画函数封装  obj目标对象  target 目标位置
+        function animate(obj, target, callback) {
+            // console.log(callback); // callback = funcation() {}  调用的时候 callback()
+            // 回调函数：函数可以作为一个参数，见这个函数作为参数传到另一个函数里面
+            // 当那个函数执行完毕之后，在执行传进来的这个函数，这个过程就是回调
+
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                // 步长写到定时器里面
+                // 步长计算公式：（目标值 - 当前的位置） / 10
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+                // 停止动画 本质是停止定时器
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    // 回调函数写到定时器结束里面
+                    if (callback) {
+                        // 调用函数
+                        callback();
+                    }
+
+                } else {
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }
+            }, 30)
+        }
+
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+
+        btn500.addEventListener('click', function () {
+            animate(span, 500);
+        })
+        btn800.addEventListener('click', function () {
+            animate(span, 800, function () {
+                // console.log(11);
+                span.style.backgroundColor = 'red';
+            });
+        })
+
+    </script>
+</body>
+
+</html>

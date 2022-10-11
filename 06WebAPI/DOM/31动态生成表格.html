@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 500px;
+            border: 1px solid #000;
+            text-align: center;
+            margin: 100px auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            height: 30px;
+            border: 1px solid #000;
+        }
+
+        tbody {
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>姓名</th>
+            <th>专业</th>
+            <th>分数</th>
+            <th>操作</th>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        // 创建对象,存储学生数据
+        var stu = [
+            {
+                name: '魏璎珞',
+                subject: 'JavaScript',
+                score: 100
+            },
+            {
+                name: '弘历',
+                subject: 'JavaScript',
+                score: 99
+            },
+            {
+                name: '傅恒',
+                subject: 'JavaScript',
+                score: 98
+            },
+            {
+                name: '明玉',
+                subject: 'JavaScript',
+                score: 88
+            },
+            {
+                name: '大猪蹄子',
+                subject: 'JavaScript',
+                score: 0
+            }
+        ];
+
+        // 2.获取事件
+        var tbody = document.querySelector('tbody');
+
+        // 3.注册事件 添加行 列 数据
+        // 添加的行 tr 的数量取绝于对象中有多个人
+        for (var i = 0; i < stu.length; i++) {  // 这个for循环管行 tr
+            // (1)创建行 tr
+            var tr = document.createElement('tr');
+            // (2)添加行
+            tbody.append(tr);
+            // 添加单元格 td 数量取绝于每个学生有多少个属性
+            for (var k in stu[i]) {  //这个for管单元格 td
+                // (3)创建单元格 td
+                var td = document.createElement('td');
+                // 把学生属性中的值填入单元格
+                td.innerHTML = stu[i][k];
+                // (4)添加单元格
+                tr.append(td);
+            }
+
+            // 添加带有删除的单元格
+            var td = document.createElement('td');
+            td.innerHTML = '<a href = "javascript:;">删除</a>';
+            tr.append(td);
+        }
+
+        // 4添加删除操作
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                // a的父级是单元格td td的父亲是tr 要删除的是a所在的行 是父级的父级
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

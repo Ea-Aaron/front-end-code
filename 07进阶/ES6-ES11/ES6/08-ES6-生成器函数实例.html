@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 异步编程  文件操作 网络操作(Ajax request) 数据库操作
+        // 1s后控制台输出 111  2s后 222  3s后 333
+
+        // 回调地狱
+        // setTimeout(() => {
+        //     console.log(111);
+        //     setTimeout(() => {
+        //         console.log(222);
+        //         setTimeout(() => {
+        //             console.log(333);
+        //         }, 3000)
+        //     }, 2000)
+        // }, 1000)
+
+        // 生成器函数方法
+        function one() {
+            setTimeout(() => {
+                console.log(111);
+                iterator.next();
+            }, 1000)
+        };
+        function two() {
+            setTimeout(() => {
+                console.log(222);
+                iterator.next();
+            }, 2000)
+        };
+        function three() {
+            setTimeout(() => {
+                console.log(333);
+                iterator.next();
+            }, 3000)
+        };
+
+        function* gen() {
+            yield one();
+            yield two();
+            yield three();
+        }
+
+        // 调用生成器
+        let iterator = gen();
+        // 当时这样只会调用one(),而不会执行后续的函数
+        // 需要在函数体内部执行next方法
+        iterator.next();
+    </script>
+</body>
+
+</html>

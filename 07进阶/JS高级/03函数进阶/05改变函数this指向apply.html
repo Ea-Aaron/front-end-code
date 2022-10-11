@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // fun.apply(thisArg, [argsArray])
+        //  thisArg：在fun函数运行时指定的this值
+        // argsArray：传递的值，必须是数组格式
+        // 返回值  就是函数的返回值，因为它就是调用函数
+        var o = {
+            uname: 'aaron'
+        }
+        function fun(a, b) {
+            console.log(this);
+            console.log(a, b); //red
+            // 返回的不是数组，而是数组里面的值
+        }
+        var num = fun.apply(o, ['red', 'blue']);
+
+        // apply 主要用于  比如利用apply 借助于数学内置对象求取最大值
+        var arr = [1, 255, 6, 8, 9, 545, 15, 35];
+        var max = Math.max.apply(Math, arr);
+        var min = Math.min.apply(Math, arr);
+        console.log(max);
+        console.log(min);
+    </script>
+</body>
+
+</html>

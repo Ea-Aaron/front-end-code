@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 查找字符串"abcoefoxyozzopp"中所有o出现的位置及次数
+        // 1.找到第一个o出现的位置
+        // 2.当前索引值+1就可以继续向后查找，一直indexOf = -1
+        var str = "oabcoefoxyozzopp";
+        var count = 0;
+        var index = str.indexOf('o');
+        // console.log(index);
+        while (index != -1) {
+            console.log(index);
+            index = str.indexOf('o', index + 1);
+            count++;
+        }
+        console.log("o出现的次数：" + count);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 筛选数组 filter(function(currentValue, index, arr))
+        // filter()方法创建一个新的数组，新数组中得到元素是通过检查指定数组中符合条件的所有元素，主要用于筛选数组
+        // 【注】它直接返回一个新数组
+        var arr = [12, 5, 6, 88, 0, 5, 6, 9, 44, 88];
+        var newarr = arr.filter(function (value, index) {
+            // return value > 40;
+            return value % 2 === 0;
+        })
+        console.log(newarr);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象解构允许我们使用变量的名字匹配对象的属性 匹配成功 将对象属性的值赋值给变量
+
+        let obj = {
+            uname: '张三',
+            age: 18,
+            // sex: '男'
+        };
+        // 原来我们需要提取对象里面的属性值
+        // console.log(obj.uname);
+        // console.log(obj.age);
+        // console.log(obj.sex);
+
+        let { uname, age, sex } = obj;
+        console.log(uname);
+        console.log(age);
+        console.log(sex);
+
+        // 使用别名
+        let { uname: myName, age: myage } = obj;
+        console.log(myName);
+    </script>
+</body>
+
+</html>
