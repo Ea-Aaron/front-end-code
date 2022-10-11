@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        利用盒子添加float浮动之后，会挡住标准流的盒子，但是不会挡住盒子里面的文字内容，利用这个特性，让文字环绕在图片周围
+     -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 300px;
+            height: 60px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+
+        .img {
+            float: left;
+            width: 120px;
+            height: 60px;
+        }
+
+        .img img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="img">
+            <img src="imgs/bg.png" alt="">
+        </div>
+        <p>拉萨加拿大绿卡是，kfnalksjdlasldja</p>
+    </div>
+</body>
+
+</html>

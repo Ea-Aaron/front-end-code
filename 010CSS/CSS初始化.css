@@ -1,0 +1,70 @@
+/* 清除所有标签的的边框 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* em 和 i 的文字不倾斜 */
+em,
+i {
+    font-style: normal;
+}
+
+/* 清除li前面的小圆点 */
+li {
+    list-style: none;
+}
+
+/* 
+    border 0 照顾低版本浏览器，如果图片包含了谅解会有边框的问题
+    取消图片边框，让文字于图片中线对齐 
+*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/* 鼠标移到按钮上变成小手 */
+button {
+    cursor: pointer;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c81623;
+}
+
+button,
+input {
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53";
+}
+
+body {
+    /* 抗锯齿 */
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+    font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53";
+    color: #666;
+}
+
+.hide,
+.none {
+    display: none;
+}
+
+/* 伪元素清除浮动 */
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: "";
+    height: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}

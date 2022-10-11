@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        选择符              简介
+        E[att]              选择具有att属性的E元素
+        E[att="val"]        选择具有att属性且属性值等于val的E元素
+        E[att^="val"]       选择具有att属性且值以val开头的E元素
+        E[att$="val"]       选择具有att属性且值以val结尾的E元素
+        E[att*="val"]       选择具有att属性且值中含有val的E元素
+     -->
+    <style>
+        /* 必须是input 但是同时具有value这个属性 */
+        input[value] {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.利用属性选择器不借助类或者id选择器 -->
+    <input type="text" value="请输入用户名">
+    <input type="text">
+    <!-- 2.利用属性选择器选择属性=值的某些元素 -->
+
+    <!-- 3.利用属性选择器选择属性值开头的元素 -->
+
+    <!-- 4.利用属性选择器选择属性值结尾的元素 -->
+</body>
+
+</html>

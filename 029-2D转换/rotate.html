@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        2D转换至旋转rotate
+        语法：
+            transform:rotate(度数)
+        
+        【注】
+            1.rotate里面跟度数，单位时deg，例如：rotate(45deg);
+            2.角度为正时，顺时针，负时，为逆时针
+            3.默认旋转的中心点时元素的中心点
+
+        2D转换中心点transform-origin
+        语法：
+            transform-origin:x y;
+
+        【注】
+            1.注意后面的参数x和有使用空格隔开；
+            2.x y默认转换的中心点时元素的中心点（50% 50%）
+            3.还可以给x y设置像素或者方位名词（left right top bottom center）
+     -->
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 30px auto;
+            transition: all 1s;
+            /* transform-origin: left bottom; */
+            transform-origin: 20px 60px;
+        }
+
+        div:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

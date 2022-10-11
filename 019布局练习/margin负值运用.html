@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        两个盒子在挨在一起的时候，会因为边框有宽度的原因，让两个盒子的相邻的地方看起来很厚
+        利用margin取消这个厚度
+        1.让每个盒子margin往左移动-1px，正好压住相邻盒子边框
+        2.鼠标经过某个盒子的时候提高盒子的层级（如果没有定位。则加相对定位（保留位置），如果有定位，则加z-index）
+
+        设置完成之后还是有重叠，是因为网页缩放问题，将网页缩放至80%就可以正常显示了
+        border-collapse: collapse;只针对表格边框，对盒子边框不生效
+     -->
+    <style>
+        .box ul li {
+            list-style: none;
+            float: left;
+            width: 200px;
+            height: 300px;
+            border: 1px solid red;
+            margin-left: -1px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</body>
+
+</html>

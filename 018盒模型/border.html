@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        border 可以设置元素的边框。边框有三部分组成：
+            边框宽度(粗细)          border-width
+            边框样式                border-style
+                solid       实线
+                dashed      虚线
+                dotted      点线
+            边框颜色                border-color
+        简写：
+            border:border-width border-style border-color
+
+        可以单独设置上下左右边框
+            border-top      上边框
+            border-bottom   下边框
+            border-left     左边框
+            border-right    右边框
+
+        当遇到表格时，可以让相邻的单元格边框进行合并
+            border-collapse:collapse
+     -->
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            /* border-top: 5px solid red;
+            border-bottom: 5px solid blue;
+            border-left: 5px solid blue;
+            border-right: 5px solid blue; */
+            /* 可以写成 */
+            border: 5px solid blue;
+            border-top: 5px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>
