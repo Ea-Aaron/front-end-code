@@ -3,7 +3,7 @@ const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // 开发环境 'production' 生产环境
+  mode: 'production',
   entry: path.join(__dirname, 'src', 'index.js'), // 入口文件  __dirname 指的是根目录
   // 输出文件位置
   output: {
